@@ -65,6 +65,15 @@
     text-wrap: balance;
   }
 
+/* src/index.css */
+@layer utilities {
+  .text-grainy {
+    background-image: url('https://i.pinimg.com/736x/57/16/6a/57166a79afaabefac92058fa0b0a2709.jpg');
+    background-blend-mode: overlay;
+    background-size: 200px;
+  }
+}
+
   .prose-custom :where(p):not(:where([class~="not-prose"] *)) {
     @apply text-gray-600 dark:text-gray-300 leading-relaxed;
   }

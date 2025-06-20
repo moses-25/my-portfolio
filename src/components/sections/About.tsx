@@ -4,7 +4,7 @@ import Image from '../../assets/moses.jpg'; // Adjust the path as necessary
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-dark-900">
+    <section id="about" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Section Header */}
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
@@ -40,10 +40,11 @@ const About = () => {
                 </div>
                 <div className="space-y-1 pl-11">
                   <p className="text-gray-700 dark:text-gray-200">Certificate in Software Engineering</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">2022 - Present</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Ocadron</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">2025 - Present</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Moringa School</p>
                 </div>
-              </div>http://localhost:5175/
+              </div>
+              http://localhost:5175/
 
               {/* Location Card */}
               <div className="bg-gray-50 dark:bg-dark-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-dark-700">
@@ -83,7 +84,8 @@ const About = () => {
           <div className="relative h-full flex justify-center lg:justify-end">
             <div className="relative max-w-md w-full">
               {/* Profile Image */}
-              <div className="aspect-square w-full rounded-2xl overflow-hidden bg-gray-200 dark:bg-dark-700">
+              <div className="aspect-square w-full rounded-2xl overflow-hidden bg-gray-200 dark:bg-gray-700">
+
                 <img
                   src={Image}
                   alt="Profile"

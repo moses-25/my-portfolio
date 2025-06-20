@@ -20,7 +20,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode }) => {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">Moses Otieno</h3>
             <p className="mb-4 text-gray-400">
-              Software Engineering Student and aspiring Full-Stack Developer with a passion for creating elegant, efficient solutions.
+              Software Engineering Student from Moringa School .
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">

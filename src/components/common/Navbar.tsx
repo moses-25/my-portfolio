@@ -1,26 +1,12 @@
 // src/components/common/Navbar.tsx
-import React, { useState } from 'react';
+import React from 'react';
 import DarkModeToggle from './DarkModeToggle';
 
-interface NavbarProps {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-    setIsMenuOpen(false);
-  };
-
+const Navbar = () => {
   return (
-    <nav className={`fixed w-full z-50 ${darkMode ? 'bg-gray-900/90 backdrop-blur-sm border-gray-800' : 'bg-white/90 backdrop-blur-sm border-gray-200'} border-b transition-colors duration-300`}>
-      {/* Navbar content */}
+    <nav className="flex justify-between items-center p-4 shadow-md bg-white dark:bg-gray-900">
+      <h1 className="text-xl font-bold text-gray-800 dark:text-white">My Portfolio</h1>
+      <DarkModeToggle />
     </nav>
   );
 };
