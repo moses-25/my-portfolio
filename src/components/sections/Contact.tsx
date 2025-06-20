@@ -35,7 +35,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                     type="text" 
                     id="name" 
                     className={`w-full px-4 py-3 rounded-lg ${darkMode ? 'bg-gray-800 border-gray-700 text-white' : 'bg-gray-50 border-gray-300 text-gray-900'} border focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors duration-300`}
-                    placeholder="John Doe"
+                    placeholder="moses otieno"
                     required
                   />
                 </div>
@@ -46,7 +46,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                     type="email" 
                     id="email" 
                     className={`w-full px-4 py-3 rounded-lg ${darkMode ? 'bg-gray-800 border-gray-700 text-white' : 'bg-gray-50 border-gray-300 text-gray-900'} border focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors duration-300`}
-                    placeholder="john@example.com"
+                    placeholder="moses@example.com"
                     required
                   />
                 </div>

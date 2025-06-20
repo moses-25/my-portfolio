@@ -1,5 +1,6 @@
 // src/components/sections/About.tsx
 import React from 'react';
+import Image from '../../assets/moses.jpg'; // Adjust the path as necessary
 
 const About = () => {
   return (
@@ -18,7 +19,7 @@ const About = () => {
             </h3>
             
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              I'm currently pursuing my degree in Software Engineering, where I've developed a strong foundation in both front-end and back-end technologies. My journey in tech started with a curiosity about how digital products work, which evolved into a passion for creating them myself.
+              I'm currently pursuing my certificate in Software Engineering at MORINGA, where I've developed a strong foundation in both front-end and back-end technologies. My journey in tech started with a curiosity about how digital products work, which evolved into a passion for creating them myself.
             </p>
             
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -38,11 +39,11 @@ const About = () => {
                   <h4 className="font-semibold text-gray-800 dark:text-white">Education</h4>
                 </div>
                 <div className="space-y-1 pl-11">
-                  <p className="text-gray-700 dark:text-gray-200">BSc in Software Engineering</p>
+                  <p className="text-gray-700 dark:text-gray-200">Certificate in Software Engineering</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">2022 - Present</p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">Ocadron</p>
                 </div>
-              </div>
+              </div>http://localhost:5175/
 
               {/* Location Card */}
               <div className="bg-gray-50 dark:bg-dark-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-dark-700">
@@ -78,24 +79,23 @@ const About = () => {
             </div>
           </div>
 
-          {/* Right Column - Experience Badge */}
+          {/* Right Column - Profile Image and Badge */}
           <div className="relative h-full flex justify-center lg:justify-end">
             <div className="relative max-w-md w-full">
-              {/* Profile Image Placeholder */}
+              {/* Profile Image */}
               <div className="aspect-square w-full rounded-2xl overflow-hidden bg-gray-200 dark:bg-dark-700">
-                {/* Replace with your actual image */}
-                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
+                <img
+                  src={Image}
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
               </div>
               
               {/* Experience Badge */}
               <div className="absolute -bottom-5 -left-5 bg-primary-500 text-white px-6 py-4 rounded-lg shadow-lg">
                 <div className="text-center">
-                  <div className="text-3xl font-bold">2+</div>
-                  <div className="text-sm">Years of Experience</div>
+                  <div className="text-3xl font-bold">1+</div>
+                  <div className="text-sm">Year of Experience</div>
                 </div>
               </div>
             </div>

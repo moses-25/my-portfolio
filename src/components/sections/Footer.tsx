@@ -80,7 +80,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode }) => {
         
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {new Date().getFullYear()} Moses Otieno. All rights reserved.</p>
-          <p className="mt-4 md:mt-0">Built with <span className="text-red-500">❤️</span> by Moses</p>
+          <p className="mt-4 md:mt-0">Built by <span className="text-red-500">@</span>moses_kingstone</p>
         </div>
       </div>
     </footer>

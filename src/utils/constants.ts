@@ -25,8 +25,8 @@ export const projectsData: Project[] = [
   {
     title: 'E-Commerce Platform',
     image: 'https://i.pinimg.com/736x/28/43/f7/2843f7ef7f0596f72b4b2088ece925fc.jpg',
-    description: 'A full-featured online store with product catalog, shopping cart, and payment integration.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
+    description: 'A full-featured coffee store e-commerce platform with payment integration.',
+    tech: ['HTML', 'CSS', 'JAVASC', 'REACT'],
     github: '#',
     demo: '#'
   },
@@ -34,7 +34,7 @@ export const projectsData: Project[] = [
     title: 'Task Management App',
     image: 'https://i.pinimg.com/736x/b8/36/0d/b8360d27e65d3ed943fe6d1a6bb95273.jpg',
     description: 'A Kanban-style task organizer with drag-and-drop functionality and team collaboration features.',
-    tech: ['React', 'Firebase', 'Tailwind CSS', 'DnD Kit'],
+    tech: ['React', 'CSS3', 'Tailwind CSS', 'PYTHON'],
     github: '#',
     demo: '#'
   },
@@ -51,20 +51,20 @@ export const projectsData: Project[] = [
 export const testimonialsData: Testimonial[] = [
   {
     quote: "Moses is an exceptional student with a natural talent for problem-solving. His dedication to writing clean, efficient code sets him apart from his peers.",
-    name: "Dr. Sarah Johnson",
-    role: "Professor of Computer Science",
+    name: "Emmah Karanja",
+    role: "TM @ MORINGA SCHOOL",
     image: "https://i.pinimg.com/736x/6d/12/94/6d1294df16c7472b00111e3672ff525e.jpg"
   },
   {
     quote: "Working with Moses on our group project was a great experience. He brings innovative ideas to the table and has a strong commitment to quality.",
-    name: "James Mwangi",
+    name: "Kelly Koome",
     role: "Fellow Student & Collaborator",
     image: "https://i.pinimg.com/736x/a4/1b/48/a41b48051dc7bc32b8686260cc0fb4da.jpg"
   },
   {
-    quote: "Moses quickly grasped complex concepts during his internship and applied them effectively. His ability to learn and adapt is impressive.",
-    name: "Lisa Ochieng",
-    role: "Tech Lead at InnovateKE",
+    quote: "Moses quickly grasped complex concepts during his time in MORINGA. He consistently delivered high-quality work and applied them effectively. His ability to learn and adapt is impressive.",
+    name: "Lynne Kolli",
+    role: "Fellow Student",
     image: "https://i.pinimg.com/736x/92/57/20/9257209aaef8ec0cb97cc24eb9f7750b.jpg"
   }
 ];
