@@ -1,3 +1,49 @@
+# Moses Otieno - Portfolio Website
+
+![Portfolio Screenshot](./public/screenshot.png)
+
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS to showcase my skills, projects, and professional journey as a Software Engineering student.
+
+## 🚀 Features
+
+  - Clean, professional layout
+  - Dark/light mode toggle
+  - Responsive on all devices
+  - Smooth animations and transitions
+
+- **Sections**
+  - Hero section with typing animation
+  - About me with skills visualization
+  - Projects showcase with interactive cards
+  - Contact form with validation
+  - Testimonials section
+
+- **Technical Highlights**
+  - TypeScript for type safety
+  - Tailwind CSS for utility-first styling
+  - Vite for fast development
+  - ECharts for skills visualization
+  - React hooks for state management
+
+## 🛠️ Technologies Used
+
+- **Frontend**
+  - React 18
+  - TypeScript
+  - Tailwind CSS
+  - ECharts
+  - Framer Motion (for animations)
+
+- **Build Tools**
+  - Vite
+  - PostCSS
+  - npm
+
+## 📦 Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-portfolio.git
 src/
 ├── assets/
 │   ├── images/          # Store all images here
