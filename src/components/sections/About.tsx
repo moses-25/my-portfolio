@@ -1,75 +1,99 @@
 // src/components/sections/About.tsx
 import React from 'react';
 
-interface AboutProps {
-  darkMode: boolean;
-}
-
-const About: React.FC<AboutProps> = ({ darkMode }) => {
+const About = () => {
   return (
-    <section id="about" className={`py-20 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} transition-colors duration-300`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-          <div className="w-20 h-1 bg-indigo-600 mx-auto"></div>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
-            <h3 className="text-2xl font-semibold mb-6">
-              I'm a <span className="text-indigo-600">Software Engineering Student</span> with a passion for building digital solutions
+    <section id="about" className="py-20 bg-white dark:bg-dark-900">
+      <div className="container mx-auto px-4 max-w-6xl">
+        {/* Section Header */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+          About Me
+        </h2>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Text Content */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
+              I'm a <span className="text-primary-500">Software Engineering Student</span> with a passion for building digital solutions
             </h3>
             
-            <p className="mb-6 text-lg leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
               I'm currently pursuing my degree in Software Engineering, where I've developed a strong foundation in both front-end and back-end technologies. My journey in tech started with a curiosity about how digital products work, which evolved into a passion for creating them myself.
             </p>
             
-            <p className="mb-8 text-lg leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
               Beyond coding, I enjoy solving complex problems, collaborating with diverse teams, and continuously learning new technologies. I believe in writing clean, maintainable code and creating intuitive user experiences.
             </p>
-            
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div>
-                <h4 className="font-semibold mb-3 flex items-center">
-                  <i className="fas fa-user-graduate text-indigo-600 mr-2"></i>
-                  Education
-                </h4>
-                <p>BSc in Software Engineering</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">2022 - Present</p>
+
+            {/* Education & Location Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+              {/* Education Card */}
+              <div className="bg-gray-50 dark:bg-dark-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-dark-700">
+                <div className="flex items-center mb-3">
+                  <div className="p-2 rounded-md bg-primary-100 dark:bg-primary-900/30 mr-3">
+                    <svg className="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold text-gray-800 dark:text-white">Education</h4>
+                </div>
+                <div className="space-y-1 pl-11">
+                  <p className="text-gray-700 dark:text-gray-200">BSc in Software Engineering</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">2022 - Present</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Ocadron</p>
+                </div>
               </div>
-              
-              <div>
-                <h4 className="font-semibold mb-3 flex items-center">
-                  <i className="fas fa-map-marker-alt text-indigo-600 mr-2"></i>
-                  Location
-                </h4>
-                <p>Nairobi, Kenya</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Open to Remote Work</p>
+
+              {/* Location Card */}
+              <div className="bg-gray-50 dark:bg-dark-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-dark-700">
+                <div className="flex items-center mb-3">
+                  <div className="p-2 rounded-md bg-primary-100 dark:bg-primary-900/30 mr-3">
+                    <svg className="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-semibold text-gray-800 dark:text-white">Location</h4>
+                </div>
+                <div className="space-y-1 pl-11">
+                  <p className="text-gray-700 dark:text-gray-200">Nairobi, Kenya</p>
+                  <p className="text-sm text-primary-500 dark:text-primary-400">Open to Remote Work</p>
+                </div>
               </div>
             </div>
-            
-            <div className="flex flex-wrap gap-2">
-              <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">JavaScript</span>
-              <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">React</span>
-              <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Python</span>
-              <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">SQL</span>
-              <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Flask</span>
-              <span className="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-medium">Git</span>
+
+            {/* Skills Tags */}
+            <div className="mt-8">
+              <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-3">Technical Skills:</h4>
+              <div className="flex flex-wrap gap-2">
+                {['JavaScript', 'React', 'Python', 'HTML5', 'CSS3', 'Git', 'GitHub'].map((skill) => (
+                  <span 
+                    key={skill} 
+                    className="px-3 py-1.5 bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-300 rounded-full text-sm font-medium"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
-          
-          <div className="order-1 lg:order-2">
-            <div className="relative">
-              <div className="w-full h-96 rounded-2xl overflow-hidden shadow-xl">
-                <img 
-                  src="https://i.pinimg.com/736x/42/59/a8/4259a8e260f3d7016e56064860591373.jpg" 
-                  alt="Moses working" 
-                  className="w-full h-full object-cover object-top"
-                />
+
+          {/* Right Column - Experience Badge */}
+          <div className="relative h-full flex justify-center lg:justify-end">
+            <div className="relative max-w-md w-full">
+              {/* Profile Image Placeholder */}
+              <div className="aspect-square w-full rounded-2xl overflow-hidden bg-gray-200 dark:bg-dark-700">
+                {/* Replace with your actual image */}
+                <div className="w-full h-full flex items-center justify-center text-gray-400">
+                  <svg className="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
               </div>
               
-              <div className="absolute -bottom-5 -left-5 w-32 h-32 bg-indigo-600 rounded-lg flex items-center justify-center">
-                <div className="text-center text-white">
+              {/* Experience Badge */}
+              <div className="absolute -bottom-5 -left-5 bg-primary-500 text-white px-6 py-4 rounded-lg shadow-lg">
+                <div className="text-center">
                   <div className="text-3xl font-bold">2+</div>
                   <div className="text-sm">Years of Experience</div>
                 </div>
