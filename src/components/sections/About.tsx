@@ -44,7 +44,6 @@ const About = () => {
                   <p className="text-sm text-gray-500 dark:text-gray-400">Moringa School</p>
                 </div>
               </div>
-              http://localhost:5175/
 
               {/* Location Card */}
               <div className="bg-gray-50 dark:bg-dark-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-dark-700">
