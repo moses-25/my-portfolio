@@ -27,7 +27,7 @@ export const projectsData: Project[] = [
     image: 'https://i.pinimg.com/736x/28/43/f7/2843f7ef7f0596f72b4b2088ece925fc.jpg',
     description: 'A full-featured coffee store e-commerce platform with payment integration.',
     tech: ['HTML', 'CSS', 'JAVASC', 'REACT'],
-    github: '#',
+    github: 'https://github.com/moses-25',
     demo: '#'
   },
   {
@@ -35,7 +35,7 @@ export const projectsData: Project[] = [
     image: 'https://i.pinimg.com/736x/b8/36/0d/b8360d27e65d3ed943fe6d1a6bb95273.jpg',
     description: 'A Kanban-style task organizer with drag-and-drop functionality and team collaboration features.',
     tech: ['React', 'CSS3', 'Tailwind CSS', 'PYTHON'],
-    github: '#',
+    github: 'https://github.com/moses-25',
     demo: '#'
   },
   {
@@ -43,7 +43,7 @@ export const projectsData: Project[] = [
     image: 'https://i.pinimg.com/736x/ef/79/80/ef7980f2aa1e0a0e28e81c53c679cade.jpg',
     description: 'Real-time weather information with 5-day forecast, location search, and interactive maps.',
     tech: ['JavaScript', 'OpenWeather API', 'Chart.js', 'Geolocation API'],
-    github: '#',
+    github: 'https://github.com/moses-25',
     demo: '#'
   }
 ];
