@@ -95,7 +95,7 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
                   </div>
                   <div>
                     <h4 className="font-medium mb-1">Email</h4>
-                    <p className="text-gray-600 dark:text-gray-400">moses@example.com</p>
+                    <p className="text-gray-600 dark:text-gray-400">mosesotieno8363@gmail.com</p>
                   </div>
                 </div>
                 
