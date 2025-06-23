@@ -26,13 +26,13 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, darkMode
         </div>
         <div>
           <h3 className="font-semibold">{testimonial.name}</h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</p>
+          <p className="text-sm text-black-600 dark:text-black-400">{testimonial.role}</p>
         </div>
       </div>
       
       <div className="relative">
         <i className="fas fa-quote-left text-4xl text-indigo-200 absolute -top-4 -left-2 opacity-50"></i>
-        <p className="relative z-10 text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="relative z-10 text-black-600 dark:text-`black-300 leading-relaxed">
           "{testimonial.quote}"
         </p>
       </div>
