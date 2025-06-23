@@ -6,7 +6,7 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ darkMode }) => {
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission
     alert('Message sent!');
@@ -125,19 +125,44 @@ const Contact: React.FC<ContactProps> = ({ darkMode }) => {
               <h3 className="text-2xl font-semibold mb-6">Follow Me</h3>
               
               <div className="flex space-x-4">
-                <a href="#" className="w-12 h-12 rounded-lg bg-[#1877F2] text-white flex items-center justify-center hover:opacity-90 transition-opacity">
+                <a
+                  href="https://facebook.com/moses.jones.98871"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-lg bg-[#1877F2] text-white flex items-center justify-center hover:opacity-90 transition-opacity"
+                >
                   <i className="fab fa-facebook-f text-xl"></i>
                 </a>
-                <a href="#" className="w-12 h-12 rounded-lg bg-[#1DA1F2] text-white flex items-center justify-center hover:opacity-90 transition-opacity">
+                <a
+                  href="https://twitter.com/moses_kingstone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-lg bg-[#1DA1F2] text-white flex items-center justify-center hover:opacity-90 transition-opacity"
+                >
                   <i className="fab fa-twitter text-xl"></i>
                 </a>
-                <a href="#" className="w-12 h-12 rounded-lg bg-[#0A66C2] text-white flex items-center justify-center hover:opacity-90 transition-opacity">
+                <a
+                  href="https://linkedin.com/in/moses-o-311b2235a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-lg bg-[#0A66C2] text-white flex items-center justify-center hover:opacity-90 transition-opacity"
+                >
                   <i className="fab fa-linkedin-in text-xl"></i>
                 </a>
-                <a href="#" className="w-12 h-12 rounded-lg bg-[#333] text-white flex items-center justify-center hover:opacity-90 transition-opacity">
+                <a
+                  href="https://github.com/moses-25"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-lg bg-[#333] text-white flex items-center justify-center hover:opacity-90 transition-opacity"
+                >
                   <i className="fab fa-github text-xl"></i>
                 </a>
-                <a href="#" className="w-12 h-12 rounded-lg bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white flex items-center justify-center hover:opacity-90 transition-opacity">
+                <a
+                  href="https://instagram.com/moses_kingstone/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-lg bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white flex items-center justify-center hover:opacity-90 transition-opacity"
+                >
                   <i className="fab fa-instagram text-xl"></i>
                 </a>
               </div>
