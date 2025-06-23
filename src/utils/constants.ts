@@ -51,7 +51,7 @@ export const projectsData: Project[] = [
 export const testimonialsData: Testimonial[] = [
   {
     quote: "Moses is an exceptional student with a natural talent for problem-solving. His dedication to writing clean, efficient code sets him apart from his peers.",
-    name: "Emmah Karanja",
+    name: "Joseph Wambua",
     role: "TM @ MORINGA SCHOOL",
     image: "https://i.pinimg.com/736x/6d/12/94/6d1294df16c7472b00111e3672ff525e.jpg"
   },
