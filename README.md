@@ -1,7 +1,5 @@
 # Moses Otieno - Portfolio Website
 
-![Portfolio Screenshot](./public/screenshot.png)
-
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS to showcase my skills, projects, and professional journey as a Software Engineering student.
 
 ## 🚀 Features
