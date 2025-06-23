@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
       <div className="p-6">
         <h3 className="text-xl font-bold mb-3">{project.title}</h3>
         
-        <p className="mb-4 text-gray-600 dark:text-gray-400">{project.description}</p>
+        <p className="mb-4 text-black-600 dark:text-black-400">{project.description}</p>
         
         <div className="mb-6 flex flex-wrap gap-2">
           {project.tech.map((tech, techIndex) => (
