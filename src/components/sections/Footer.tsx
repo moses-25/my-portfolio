@@ -23,16 +23,28 @@ const Footer: React.FC<FooterProps> = ({ darkMode }) => {
               Software Engineering Student from Moringa School .
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://github.com/moses-25" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors">
                 <i className="fab fa-github text-xl"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://linkedin.com/in/moses-o-311b2235a" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors">
                 <i className="fab fa-linkedin-in text-xl"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://twitter.com/moses_kingstone" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors">
                 <i className="fab fa-twitter text-xl"></i>
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://facebook.com/moses.jones.98871" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors">
                 <i className="fab fa-instagram text-xl"></i>
               </a>
             </div>
