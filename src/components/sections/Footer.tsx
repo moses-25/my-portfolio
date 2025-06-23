@@ -76,7 +76,7 @@ const Footer: React.FC<FooterProps> = ({ darkMode }) => {
             <ul className="space-y-2">
               <li className="flex items-center">
                 <i className="fas fa-envelope mr-2 text-indigo-400"></i>
-                <span>mosesotieno8363.gmail.com</span>
+                <span>mosesotieno8363@gmail.com</span>
               </li>
               <li className="flex items-center">
                 <i className="fas fa-map-marker-alt mr-2 text-indigo-400"></i>
