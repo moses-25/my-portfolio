@@ -84,7 +84,8 @@ const Footer: React.FC<FooterProps> = ({ darkMode }) => {
               </li>
               <li className="flex items-center">
                 <i className="fas fa-phone-alt mr-2 text-indigo-400"></i>
-                <span>Available on request</span>
+                <span>Available on request 
+                <br />(+254) 757 268 162 </span>
               </li>
             </ul>
           </div>
