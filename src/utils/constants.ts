@@ -53,13 +53,13 @@ export const testimonialsData: Testimonial[] = [
     quote: "Moses is an exceptional student with a natural talent for problem-solving. His dedication to writing clean, efficient code sets him apart from his peers.",
     name: "Joseph Wambua",
     role: "TM @ MORINGA SCHOOL",
-    image: "https://i.pinimg.com/736x/6d/12/94/6d1294df16c7472b00111e3672ff525e.jpg"
+    image: "https://i.pinimg.com/736x/23/51/1d/23511d80cfaa740c7a9699a3eaa38a26.jpg"
   },
   {
     quote: "Working with Moses on our group project was a great experience. He brings innovative ideas to the table and has a strong commitment to quality.",
     name: "Kelly Koome",
     role: "Fellow Student & Collaborator",
-    image: "https://i.pinimg.com/736x/a4/1b/48/a41b48051dc7bc32b8686260cc0fb4da.jpg"
+    image: "https://i.pinimg.com/736x/71/83/34/7183348f435c337bcc6deeb7e09e7c95.jpg"
   },
   {
     quote: "Moses quickly grasped complex concepts during his time in MORINGA. He consistently delivered high-quality work and applied them effectively. His ability to learn and adapt is impressive.",
