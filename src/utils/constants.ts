@@ -31,12 +31,12 @@ export const projectsData: Project[] = [
     demo: '#'
   },
   {
-    title: 'Task Management App',
-    image: 'https://i.pinimg.com/736x/b8/36/0d/b8360d27e65d3ed943fe6d1a6bb95273.jpg',
-    description: 'A Kanban-style task organizer with drag-and-drop functionality and team collaboration features.',
+    title: 'GreenThumb',
+    image: '/public/project2.png',
+    description: 'Your personal plant management app. Track your plants, set reminders, and grow your garden with ease.',
     tech: ['React', 'CSS3', 'Tailwind CSS', 'PYTHON'],
     github: 'https://github.com/moses-25',
-    demo: '#'
+    demo: 'https://github.com/moses-25/Green-Thumb'
   },
   {
     title: 'Weather Dashboard',
