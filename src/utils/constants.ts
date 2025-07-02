@@ -32,7 +32,7 @@ export const projectsData: Project[] = [
   },
   {
     title: 'GreenThumb',
-    image: '/public/project2.png',
+    image: '/project2.png',
     description: 'Your personal plant management app. Track your plants, set reminders, and grow your garden with ease.',
     tech: ['React', 'CSS3', 'Tailwind CSS', 'PYTHON'],
     github: 'https://github.com/moses-25',
