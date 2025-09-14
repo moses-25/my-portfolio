@@ -28,7 +28,9 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
         <div className="text-center mt-12">
           <button className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors duration-300 flex items-center mx-auto">
             <i className="fas fa-project-diagram mr-2"></i>
-            View All Projects
+            <a href="https://github.com/moses-25" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg transition-colors duration-300 flex items-center mx-auto">
+              View All Projects on GitHub
+              </a>
           </button>
         </div>
       </div>
