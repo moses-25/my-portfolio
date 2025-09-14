@@ -21,7 +21,7 @@ const About = () => {
             </h3>
             
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              I'm currently pursuing my certificate in Software Engineering at MORINGA, where I've developed a strong foundation in both front-end and back-end technologies. My journey in tech started with a curiosity about how digital products work, which evolved into a passion for creating them myself.
+              With over one years of experience in software development and solutions, I've honed my skills in creating innovative digital products that meet organizational and personal objectives. I'm passionate about software development, always eager to learn new concepts, and possess a collaborative spirit, with a focus on detail and leadership in developing solutions that drive results.
             </p>
             
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
