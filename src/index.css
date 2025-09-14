@@ -193,6 +193,37 @@
     transition: opacity 150ms ease;
   }
   .glow-cursor.is-visible { opacity: 1; }
+
+  /* Octagon image frame */
+  .clip-octagon {
+    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  .octagon-frame { position: relative; }
+  .octagon-frame::after {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    background: radial-gradient(closest-side, rgba(56,189,248,0.4), rgba(99,102,241,0.35), transparent 70%);
+    filter: blur(26px);
+    z-index: 0;
+    opacity: .6;
+    animation: pulse-glow 4s ease-in-out infinite;
+    -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    pointer-events: none;
+  }
+
+  @keyframes pulse-glow {
+    0%,100% { opacity: .45; transform: scale(1); }
+    50% { opacity: .85; transform: scale(1.03); }
+  }
+
+  @keyframes float-soft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .animate-float-soft { animation: float-soft 6s ease-in-out infinite; will-change: transform; }
 }
 
 /* Custom utilities */
