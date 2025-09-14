@@ -17,7 +17,12 @@ const Hero: React.FC = () => {
       id="home"
       className={`relative min-h-screen flex items-center ${darkMode ? 'bg-black' : 'bg-white'} overflow-hidden`}
     >
-      {/* Grainy texture background */}
+      {/* Background: subtle animated blobs + grain */}
+      <div className="hero-animated-bg">
+        <div className="blob"></div>
+        <div className="blob"></div>
+        <div className="blob"></div>
+      </div>
       <div className="absolute inset-0 z-0 opacity-10 dark:opacity-10 pointer-events-none">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       </div>
@@ -38,17 +43,17 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="space-y-4">
-              <p className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300">Freelancer</p>
-              <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-gray-900 dark:text-white">
+              <p className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 animate-fade-up">Freelancer</p>
+              <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-gray-900 dark:text-white animate-slide-in-left delay-300">
                 Software Engineer
-                <span className="text-sky-500">.</span>
+                <span className="text-sky-500 animate-glow-blue">.</span>
               </h1>
             </div>
 
             {/* CTA */}
-            <div className="mt-10">
+            <div className="mt-10 animate-pop-in delay-600">
               <a href="/resume.pdf" download>
-                <Button variant="primary" className="rounded-full px-8 py-3 !bg-sky-600 hover:!bg-sky-700 shadow-lg">
+                <Button variant="primary" className="rounded-full px-8 py-3 !bg-sky-600 hover:!bg-sky-700 shadow-lg transition-all duration-300 hover:scale-110 hover:-translate-y-0.5 hover:drop-shadow-[0_10px_18px_rgba(14,165,233,0.35)] active:scale-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50">
                   Download Resume
                 </Button>
               </a>
@@ -56,11 +61,11 @@ const Hero: React.FC = () => {
 
             {/* Social icons */}
             <div className="mt-8 flex items-center gap-6 text-2xl">
-              <a href="https://github.com/moses-25" aria-label="GitHub" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-colors"><i className="fab fa-github" /></a>
-              <a href="https://www.linkedin.com" aria-label="LinkedIn" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-colors"><i className="fab fa-linkedin" /></a>
-              <a href="https://twitter.com" aria-label="Twitter" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-colors"><i className="fab fa-twitter" /></a>
-              <a href="https://wa.me/" aria-label="WhatsApp" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-colors"><i className="fab fa-whatsapp" /></a>
-              <a href="mailto:you@example.com" aria-label="Email" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-colors"><i className="fas fa-envelope" /></a>
+              <a href="https://github.com/moses-25" aria-label="GitHub" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md"><i className="fab fa-github" /></a>
+              <a href="https://www.linkedin.com" aria-label="LinkedIn" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md"><i className="fab fa-linkedin" /></a>
+              <a href="https://twitter.com" aria-label="Twitter" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md"><i className="fab fa-twitter" /></a>
+              <a href="https://wa.me/" aria-label="WhatsApp" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md"><i className="fab fa-whatsapp" /></a>
+              <a href="mailto:you@example.com" aria-label="Email" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md"><i className="fas fa-envelope" /></a>
             </div>
           </div>
 
@@ -71,7 +76,7 @@ const Hero: React.FC = () => {
               <img
                 src={ProfileImage}
                 alt="Portrait"
-                className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(14,165,233,0.25)]"
+                className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(14,165,233,0.25)] animate-bounce-around"
               />
               {/* Name badge */}
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-white/90 dark:bg-gray-900/90 border border-gray-200 dark:border-gray-700 shadow-md">

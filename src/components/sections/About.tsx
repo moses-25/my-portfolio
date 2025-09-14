@@ -6,7 +6,7 @@ import { useTheme } from '../../context/ThemeContext';
 const About = () => {
   const { darkMode } = useTheme();
   return (
-    <section id="about" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+    <section id="about" className={`py-20 ${darkMode ? 'bg-black' : 'bg-white'}`}>
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Section Header */}
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
@@ -84,9 +84,10 @@ const About = () => {
           {/* Right Column - Profile Image and Badge */}
           <div className="relative h-full flex justify-center lg:justify-end">
             <div className="relative max-w-md w-full">
+              {/* Blue glow behind image */}
+              <div aria-hidden className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-sky-500/30 dark:bg-sky-400/25 blur-3xl" />
               {/* Profile Image */}
-              <div className="aspect-square w-full rounded-2xl overflow-hidden bg-gray-200 dark:bg-gray-700">
-
+              <div className="aspect-square w-full rounded-2xl overflow-hidden relative z-10 bg-gray-200 dark:bg-gray-700">
                 <img
                   src={Image}
                   alt="Profile"
