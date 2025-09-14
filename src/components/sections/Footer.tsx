@@ -1,11 +1,9 @@
 // src/components/sections/Footer.tsx
 import React from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
-interface FooterProps {
-  darkMode: boolean;
-}
-
-const Footer: React.FC<FooterProps> = ({ darkMode }) => {
+const Footer: React.FC = () => {
+  const { darkMode } = useTheme();
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {

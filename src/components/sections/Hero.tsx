@@ -1,7 +1,9 @@
 // src/components/sections/Hero.tsx
 import React from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
 const Hero = () => {
+  const { darkMode } = useTheme();
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 overflow-hidden">
       {/* Background pattern */}

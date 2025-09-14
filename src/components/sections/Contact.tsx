@@ -1,11 +1,9 @@
 // src/components/sections/Contact.tsx
 import React from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
-interface ContactProps {
-  darkMode: boolean;
-}
-
-const Contact: React.FC<ContactProps> = ({ darkMode }) => {
+const Contact: React.FC = () => {
+  const { darkMode } = useTheme();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Handle form submission

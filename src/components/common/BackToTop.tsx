@@ -1,11 +1,10 @@
 // src/components/common/BackToTop.tsx
 import React from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
-interface BackToTopProps {
-  darkMode: boolean;
-}
+const BackToTop: React.FC = () => {
+  const { darkMode } = useTheme();
 
-const BackToTop: React.FC<BackToTopProps> = ({ darkMode }) => {
   return (
     <button 
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

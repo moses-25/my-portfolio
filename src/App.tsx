@@ -8,21 +8,21 @@ import Projects from './components/sections/Projects';
 import Contact from './components/sections/Contact';
 import Footer from './components/sections/Footer';
 import BackToTop from './components/common/BackToTop';
-import { useDarkMode } from './hooks/useDarkMode';
+import { useTheme } from './context/ThemeContext';
 
 const App: React.FC = () => {
-  const { darkMode, toggleDarkMode } = useDarkMode();
+  const { darkMode } = useTheme();
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-800'} transition-colors duration-300`}>
-      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <Hero darkMode={darkMode} />
-      <About darkMode={darkMode} />
-      <Skills darkMode={darkMode} />
-      <Projects darkMode={darkMode} />
-      <Contact darkMode={darkMode} />
-      <Footer darkMode={darkMode} />
-      <BackToTop darkMode={darkMode} />
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
+      <BackToTop />
     </div>
   );
 };

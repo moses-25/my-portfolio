@@ -1,7 +1,7 @@
 // src/utils/constants.ts
-import { Project, Testimonial, Skill } from '../types';
+import { Project, Skill, NavItem } from '../types';
 
-export const navItems = [
+export const navItems: NavItem[] = [
   { label: 'Home', sectionId: 'home', icon: 'fas fa-home' },
   { label: 'About', sectionId: 'about', icon: 'fas fa-user' },
   { label: 'Skills', sectionId: 'skills', icon: 'fas fa-code' },
@@ -46,32 +46,4 @@ export const projectsData: Project[] = [
     github: 'https://github.com/moses-25',
     demo: '#'
   }
-];
-
-export const testimonialsData: Testimonial[] = [
-  {
-    quote: "Moses is an exceptional student with a natural talent for problem-solving. His dedication to writing clean, efficient code sets him apart from his peers.",
-    name: "Joseph Wambua",
-    role: "TM @ MORINGA SCHOOL",
-    image: "https://i.pinimg.com/736x/23/51/1d/23511d80cfaa740c7a9699a3eaa38a26.jpg"
-  },
-  {
-    quote: "Working with Moses on our group project was a great experience. He brings innovative ideas to the table and has a strong commitment to quality.",
-    name: "Kelly Koome",
-    role: "Fellow Student & Collaborator",
-    image: "https://i.pinimg.com/736x/71/83/34/7183348f435c337bcc6deeb7e09e7c95.jpg"
-  },
-  {
-    quote: "Moses quickly grasped complex concepts during his time in MORINGA. He consistently delivered high-quality work and applied them effectively. His ability to learn and adapt is impressive.",
-    name: "Lynne Kolli",
-    role: "Fellow Student",
-    image: "https://i.pinimg.com/736x/92/57/20/9257209aaef8ec0cb97cc24eb9f7750b.jpg"
-  }
-];
-
-export const socialLinks = [
-  { name: 'GitHub', url: '#', icon: 'fab fa-github', color: 'bg-[#333]' },
-  { name: 'LinkedIn', url: '#', icon: 'fab fa-linkedin-in', color: 'bg-[#0A66C2]' },
-  { name: 'Twitter', url: '#', icon: 'fab fa-twitter', color: 'bg-[#1DA1F2]' },
-  { name: 'Instagram', url: '#', icon: 'fab fa-instagram', color: 'bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45]' }
 ];

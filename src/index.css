@@ -32,28 +32,12 @@
     50%, 100% { opacity: 0; }
   }
 
-  @keyframes bounce {
-    0%, 100% { 
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0.8,0,1,1);
-    }
-    50% { 
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0,0,0.2,1);
-    }
-  }
-
   .animate-blink {
     animation: blink 1.5s step-end infinite;
   }
 
-  .animate-bounce {
-    animation: bounce 1s infinite;
-  }
-
   @media (prefers-reduced-motion: reduce) {
-    .animate-blink,
-    .animate-bounce {
+    .animate-blink {
       animation: none;
     }
   }
@@ -64,15 +48,6 @@
   .text-balance {
     text-wrap: balance;
   }
-
-/* src/index.css */
-@layer utilities {
-  .text-grainy {
-    background-image: url('https://i.pinimg.com/736x/57/16/6a/57166a79afaabefac92058fa0b0a2709.jpg');
-    background-blend-mode: overlay;
-    background-size: 200px;
-  }
-}
 
   .prose-custom :where(p):not(:where([class~="not-prose"] *)) {
     @apply text-gray-600 dark:text-gray-300 leading-relaxed;

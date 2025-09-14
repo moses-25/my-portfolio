@@ -14,7 +14,6 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
   - About me with skills visualization
   - Projects showcase with interactive cards
   - Contact form with validation
-  - Testimonials section
 
 - **Technical Highlights**
   - TypeScript for type safety
@@ -57,12 +56,10 @@ src/
 │   │   ├── Footer.tsx
 │   │   ├── Hero.tsx
 │   │   ├── Projects.tsx
-│   │   ├── Skills.tsx
-│   │   └── Testimonials.tsx
+│   │   └── Skills.tsx
 │   └── ui/             # UI-specific components
 │       ├── SkillCard.tsx
-│       ├── ProjectCard.tsx
-│       └── TestimonialCard.tsx
+│       └── ProjectCard.tsx
 ├── hooks/              # Custom hooks
 │   ├── useDarkMode.ts
 │   └── useTypingEffect.ts

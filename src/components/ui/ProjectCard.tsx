@@ -1,21 +1,14 @@
 // src/components/ui/ProjectCard.tsx
 import React from 'react';
-
-interface Project {
-  title: string;
-  description: string;
-  tech: string[];
-  github: string;
-  demo: string;
-  image: string;
-}
+import { useTheme } from '../../context/ThemeContext';
+import { Project } from '../../types';
 
 interface ProjectCardProps {
   project: Project;
-  darkMode: boolean;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, darkMode }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const { darkMode } = useTheme();
   return (
     <div className={`rounded-xl overflow-hidden shadow-lg ${darkMode ? 'bg-gray-900' : 'bg-white'} transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl`}>
       <div className="relative overflow-hidden h-48">

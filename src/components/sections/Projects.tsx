@@ -2,12 +2,10 @@
 import React from 'react';
 import ProjectCard from '../ui/ProjectCard';
 import { projectsData } from '../../utils/constants';
+import { useTheme } from '../../context/ThemeContext';
 
-interface ProjectsProps {
-  darkMode: boolean;
-}
-
-const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
+const Projects: React.FC = () => {
+  const { darkMode } = useTheme();
   return (
     <section id="projects" className={`py-20 ${darkMode ? 'bg-gray-800' : 'bg-gray-50'} transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,7 +19,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsData.map((project, index) => (
-            <ProjectCard key={index} project={project} darkMode={darkMode} />
+            <ProjectCard key={index} project={project} />
           ))}
         </div>
         

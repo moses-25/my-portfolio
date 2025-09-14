@@ -1,5 +1,6 @@
 // src/components/common/Button.tsx
 import React from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -8,7 +9,6 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline';
   className?: string;
   icon?: string;
-  darkMode?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,8 +18,8 @@ const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   className = '',
   icon,
-  darkMode = false
 }) => {
+  const { darkMode } = useTheme();
   const baseClasses = 'px-6 py-3 font-medium rounded-lg transition-colors duration-300 flex items-center justify-center';
   
   const variantClasses = {

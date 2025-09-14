@@ -1,10 +1,12 @@
 // src/components/sections/About.tsx
 import React from 'react';
 import Image from '../../assets/moses.jpg'; // Adjust the path as necessary
+import { useTheme } from '../../context/ThemeContext';
 
 const About = () => {
+  const { darkMode } = useTheme();
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
+    <section id="about" className={`py-20 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Section Header */}
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
