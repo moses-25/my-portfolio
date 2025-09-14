@@ -3,6 +3,7 @@ import React from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import Button from '../common/Button';
 import ProfileImage from '../../assets/moses.jpg';
+import { useTypingEffect } from '../../hooks/useTypingEffect';
 
 const roles = [
   { label: 'Designer', icon: 'fas fa-pen-ruler' },
@@ -11,6 +12,13 @@ const roles = [
 
 const Hero: React.FC = () => {
   const { darkMode } = useTheme();
+  const { typedText } = useTypingEffect(['Designer', 'Web Developer'], {
+    typeSpeed: 90,
+    deleteSpeed: 50,
+    delayBetween: 1200,
+    startDelay: 400,
+    loop: true,
+  });
 
   return (
     <section
@@ -48,6 +56,9 @@ const Hero: React.FC = () => {
                 Software Engineer
                 <span className="text-sky-500 animate-glow-blue">.</span>
               </h1>
+              <div className="mt-2 h-8 md:h-9 text-sky-400 font-semibold tracking-wide">
+                <span className="inline-block min-w-[9ch] border-r-2 border-sky-400 pr-2 animate-blink">{typedText}</span>
+              </div>
             </div>
 
             {/* CTA */}
