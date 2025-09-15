@@ -25,7 +25,7 @@ export const skillsData: Skill[] = [
 export const projectsData: Project[] = [
   {
     title: 'Charity & Donation Platform',
-    image: '/src/assets/Tuinue Wasichana.png',
+    image: '/Tuinue Wasichana.png',
     description: 'A platform connecting donors with verified charities, enabling seamless donations and impact tracking.',
     tech: ['HTML', 'CSS', 'JAVASC', 'REACT', 'FLASK', 'PYTHON', 'POSTGRESQL'],
     github: 'https://github.com/moses-25',
@@ -41,7 +41,7 @@ export const projectsData: Project[] = [
   },
   {
     title: 'HealthTrack CLI Application',
-    image: '/src/assets/Health.png',
+    image: '/Health.png',
     description: 'A powerful command-line tool designed to help users manage their nutrition goals, track daily food intake, and plan weekly meals. Perfect for busy professionals and developer students striving for a healthier lifestyle.',
     tech: ['Python', 'Typer', 'SQLAlchemy ORM', 'pytest', 'POSTGRESQL'],
     github: 'https://github.com/moses-25',
