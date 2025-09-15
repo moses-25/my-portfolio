@@ -13,8 +13,8 @@ const roles = [
 const Hero: React.FC = () => {
   const { darkMode } = useTheme();
   const { typedText } = useTypingEffect(['Designer', 'Web Developer'], {
-    typeSpeed: 90,
-    deleteSpeed: 50,
+    typeSpeed: 10,
+    deleteSpeed: 30,
     delayBetween: 1200,
     startDelay: 400,
     loop: true,
