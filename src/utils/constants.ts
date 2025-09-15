@@ -24,10 +24,10 @@ export const skillsData: Skill[] = [
 
 export const projectsData: Project[] = [
   {
-    title: 'E-Commerce Platform',
-    image: 'https://i.pinimg.com/736x/28/43/f7/2843f7ef7f0596f72b4b2088ece925fc.jpg',
-    description: 'A full-featured coffee store e-commerce platform with payment integration.',
-    tech: ['HTML', 'CSS', 'JAVASC', 'REACT'],
+    title: 'Charity & Donation Platform',
+    image: '/src/assets/Tuinue Wasichana.png',
+    description: 'A platform connecting donors with verified charities, enabling seamless donations and impact tracking.',
+    tech: ['HTML', 'CSS', 'JAVASC', 'REACT', 'FLASK', 'PYTHON', 'POSTGRESQL'],
     github: 'https://github.com/moses-25',
     demo: '#'
   },
@@ -35,16 +35,16 @@ export const projectsData: Project[] = [
     title: 'GreenThumb',
     image: '/project2.png',
     description: 'Your personal plant management app. Track your plants, set reminders, and grow your garden with ease.',
-    tech: ['React', 'CSS3', 'Tailwind CSS', 'PYTHON'],
-    github: 'https://github.com/moses-25',
-    demo: 'https://github.com/moses-25/Green-Thumb'
+    tech: [' HTML5', 'React', 'CSS3', 'Flask', 'PYTHON'],
+    github: 'https://github.com/HermannMike/green-thumb/tree/moses2',
+    demo: 'https://green-thumb-six.vercel.app/'
   },
   {
-    title: 'Weather Dashboard',
-    image: 'https://i.pinimg.com/736x/ef/79/80/ef7980f2aa1e0a0e28e81c53c679cade.jpg',
-    description: 'Real-time weather information with 5-day forecast, location search, and interactive maps.',
-    tech: ['JavaScript', 'OpenWeather API', 'Chart.js', 'Geolocation API'],
+    title: 'HealthTrack CLI Application',
+    image: '/src/assets/Health.png',
+    description: 'A powerful command-line tool designed to help users manage their nutrition goals, track daily food intake, and plan weekly meals. Perfect for busy professionals and developer students striving for a healthier lifestyle.',
+    tech: ['Python', 'Typer', 'SQLAlchemy ORM', 'pytest', 'POSTGRESQL'],
     github: 'https://github.com/moses-25',
-    demo: '#'
+    demo: 'https://github.com/moses-25/Health_simplified_CLI_app/tree/main'
   }
 ];
