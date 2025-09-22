@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
               <img
                 src={ProfileImage}
                 alt="Portrait"
-                className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(14,165,233,0.25)] animate-bounce-around"
+                className="w-full h-auto object-contain rounded-full drop-shadow-[0_20px_50px_rgba(14,165,233,0.25)] animate-bounce-around "
               />
               {/* Name badge */}
               <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-white/90 dark:bg-gray-900/90 border border-gray-200 dark:border-gray-700 shadow-md">
