@@ -28,8 +28,8 @@ export interface ParticleBackgroundProps {
  */
 const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
   particleCount = 80,
-  particleColor = "#e68e2e",
-  linkColor = "#f5d393",
+  particleColor = "#4169e1",
+  linkColor = "#00aaff",
   speed = 1,
   className = "",
   fullScreen = false,
