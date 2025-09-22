@@ -39,18 +39,20 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
 }) => {
   // Initialize tsparticles engine with loadFull so all features (links, collisions, ...) are registered
   const particlesInit = useCallback(async (engine: Engine) => {
+    console.log("Initializing particles engine...");
     try {
       // loadFull registers all available tsparticles plugins to the engine
       await loadFull(engine);
+      console.log("Particles engine initialized successfully");
     } catch (error) {
       // Fail gracefully and log for debugging
-      // eslint-disable-next-line no-console
       console.error("Error initializing particles engine:", error);
     }
   }, []);
 
   // Optional: receives the particles container after load. Kept async-compatible in case user wants to await operations.
   const particlesLoaded = useCallback(async (container?: Container) => {
+    console.log("Particles loaded:", container);
     // eslint-disable-next-line no-console
     console.debug("Particles loaded:", container);
   }, []);
@@ -135,13 +137,28 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
   // The style below guarantees the canvas stretches to its parent and does not intercept pointer events
   // so underlying UI remains interactive. The className prop is still applied for optional Tailwind control.
   return (
-    <div className={className} style={{ position: "absolute", inset: 0, zIndex: -1, pointerEvents: "none" }}>
+    <div 
+      className={className} 
+      style={{ 
+        position: "absolute", 
+        top: 0,
+        left: 0,
+        width: "100%", 
+        height: "100%", 
+        zIndex: 0, 
+        pointerEvents: "none" 
+      }}
+    >
       <Particles
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
         options={options}
-        style={{ width: "100%", height: "100%", pointerEvents: "none" }}
+        style={{ 
+          width: "100%", 
+          height: "100%", 
+          pointerEvents: "none" 
+        }}
       />
     </div>
   );
