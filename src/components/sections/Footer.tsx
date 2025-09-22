@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
               className="text-gray-400 hover:text-white transition-colors">
                 <i className="fab fa-twitter text-xl"></i>
               </a>
-              <a href="https://facebook.com/moses.jones.98871" 
+              <a href="https://www.instagram.com/moses_kingstone/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors">
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
                 <button onClick={() => scrollToSection('skills')} className="text-gray-400 hover:text-white transition-colors">Skills</button>
               </li>
               <li>
-                <button onClick={() => scrollToSection('projects')} className="text-gray-400 hover:text-white transition-colors">Projects</button>
+                <button onClick={() => scrollToSection('projects')} className="text-gray-400 hover:text-white transition-colors">Work</button>
               </li>
               <li>
                 <button onClick={() => scrollToSection('contact')} className="text-gray-400 hover:text-white transition-colors">Contact</button>
