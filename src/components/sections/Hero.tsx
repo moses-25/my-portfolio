@@ -4,6 +4,7 @@ import { useTheme } from '../../context/ThemeContext';
 import Button from '../common/Button';
 import ProfileImage from '../../assets/moses.jpg';
 import { useTypingEffect } from '../../hooks/useTypingEffect';
+import ParticlesContainer from "../ParticlesContainer";
 
 const roles = [
   { label: 'Designer', icon: 'fas fa-pen-ruler' },
@@ -42,6 +43,8 @@ const Hero: React.FC = () => {
       />
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
+        {/* Particles background */}
+        <ParticlesContainer />
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[80vh]">
           {/* Left content */}
           <div className="lg:col-span-6 order-2 lg:order-1">
