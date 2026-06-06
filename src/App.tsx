@@ -66,14 +66,12 @@ const App: React.FC = () => {
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-800'} transition-colors duration-300`}>
       <Navbar />
-      <div className="ml-64">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-        <Footer />
-      </div>
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+      <Footer />
       <BackToTop />
     </div>
   );

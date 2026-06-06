@@ -58,7 +58,8 @@ const Navbar: React.FC = () => {
         <div
           className="
             flex flex-col items-center gap-1 py-3 px-2
-            border border-white/20 dark:border-white/10
+            backdrop-blur-sm
+            border border-white/20
             rounded-3xl
             shadow-xl shadow-black/20
           "
