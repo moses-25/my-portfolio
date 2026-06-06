@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
         <img 
           src="/logo.svg" 
           alt="Logo" 
-          className="h-12 w-auto brightness-0 invert"
+          className="h-12 w-auto brightness-0 invert scale-[4]"
         />
       </div>
 
