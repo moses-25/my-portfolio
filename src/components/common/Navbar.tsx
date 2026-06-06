@@ -35,7 +35,8 @@ const Navbar = () => {
           {/* Hamburger Menu Icon */}
           <div className="mb-3 pb-3 border-b border-white/10 w-full flex justify-center">
             <button
-              className="w-11 h-11 flex items-center justify-center text-white/90 hover:text-white transition-colors"
+              onClick={() => setIsOpen(!isOpen)}
+              className="w-11 h-11 flex items-center justify-center text-white/90 hover:text-white transition-colors md:cursor-default"
               aria-label="Menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
