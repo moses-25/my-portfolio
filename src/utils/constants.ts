@@ -5,6 +5,7 @@ export const navItems: NavItem[] = [
   { label: 'Home', sectionId: 'home', icon: 'fas fa-home' },
   { label: 'About', sectionId: 'about', icon: 'fas fa-user' },
   { label: 'Skills', sectionId: 'skills', icon: 'fas fa-code' },
+  { label: 'Experience', sectionId: 'experience', icon: 'fas fa-briefcase' },
   { label: 'Projects', sectionId: 'projects', icon: 'fas fa-project-diagram' },
   { label: 'Contact', sectionId: 'contact', icon: 'fas fa-envelope' },
 ];
