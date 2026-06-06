@@ -29,10 +29,14 @@ const Navbar: React.FC = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container flex items-center justify-between py-3">
+      <div className="container flex items-center justify-between py-2">
         {/* Brand */}
         <div className="flex items-center gap-2">
-          <span className="text-xl font-bold text-gray-900 dark:text-white">My Portfolio</span>
+          <img 
+            src="/logo.svg" 
+            alt="Logo" 
+            className="h-80 w-auto brightness-0 invert"
+          />
         </div>
 
         {/* Nav links (desktop) */}
