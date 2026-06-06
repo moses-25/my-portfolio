@@ -1,5 +1,5 @@
 // src/utils/constants.ts
-import { Project, Skill, NavItem } from '../types';
+import type { Project, Skill, NavItem } from '../types';
 
 export const navItems: NavItem[] = [
   { label: 'Home', sectionId: 'home', icon: 'fas fa-home' },
