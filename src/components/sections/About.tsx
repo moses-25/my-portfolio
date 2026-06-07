@@ -120,10 +120,10 @@ const About: React.FC = () => {
 
             {/* Name */}
             <div>
-              <p className="text-teal-600 text-sm font-display font-semibold tracking-[0.15em] uppercase mb-1">
+              <p className="text-black text-sm font-heading tracking-[0.15em] uppercase mb-1">
                 Moses Otieno
               </p>
-              <h2 className="text-3xl lg:text-4xl font-heading text-gray-900 leading-snug">
+              <h2 className="text-3xl lg:text-4xl font-heading text-black leading-snug">
                 Hi, I'm <Typewriter />
               </h2>
             </div>
