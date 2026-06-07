@@ -1,172 +1,258 @@
 // src/components/sections/About.tsx
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Image from '../../assets/moses.jpg';
-// Counter with intersection-based reveal and RAF animation
-const CounterItem: React.FC<{ label: string; value: number; suffix?: string; duration?: number }>
-  = ({ label, value, suffix = '', duration = 1500 }) => {
+
+// ─── Typewriter ────────────────────────────────────────────────────────────────
+const TITLES = [
+  'a Software Engineer',
+  'a Full-Stack Developer',
+  'a React Enthusiast',
+  'a Frontend & Backend specialist',
+];
+
+const Typewriter: React.FC = () => {
+  const [text, setText] = useState('');
+  const [titleIdx, setTitleIdx] = useState(0);
+  const [phase, setPhase] = useState<'typing' | 'pausing' | 'deleting'>('typing');
+
+  useEffect(() => {
+    const target = TITLES[titleIdx];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (phase === 'typing') {
+      if (text.length < target.length) {
+        timeout = setTimeout(() => setText(target.slice(0, text.length + 1)), 75);
+      } else {
+        timeout = setTimeout(() => setPhase('pausing'), 1800);
+      }
+    } else if (phase === 'pausing') {
+      timeout = setTimeout(() => setPhase('deleting'), 200);
+    } else {
+      if (text.length > 0) {
+        timeout = setTimeout(() => setText(text.slice(0, -1)), 40);
+      } else {
+        setTitleIdx((i) => (i + 1) % TITLES.length);
+        setPhase('typing');
+      }
+    }
+
+    return () => clearTimeout(timeout);
+  }, [text, phase, titleIdx]);
+
+  return (
+    <span className="text-teal-400">
+      {text}
+      <span className="animate-pulse">|</span>
+    </span>
+  );
+};
+
+// ─── Tech icons ────────────────────────────────────────────────────────────────
+const TECH_ICONS = [
+ // { name: 'MySQL',       icon: 'fab fa-readme',      label: 'MySQL' },
+  //{ name: 'Docker',      icon: 'fab fa-docker',       label: 'Docker' },
+  { name: 'React',       icon: 'fab fa-react',         label: 'React' },
+  { name: 'Python',      icon: 'fab fa-python',        label: 'Python' },
+  { name: 'Git',         icon: 'fab fa-git-alt',       label: 'Git' },
+  { name: 'JavaScript',  icon: 'fab fa-js',            label: 'JS' },
+  { name: 'Linux',       icon: 'fab fa-linux',         label: 'Linux' },
+  { name: 'TypeScript',  icon: 'fab fa-typescript',    label: 'TS' },
+  { name: 'Flask',       icon: 'fas fa-flask',         label: 'Flask' },
+  { name: 'PostgreSQL',  icon: 'fas fa-database',      label: 'PostgreSQL' },
+  { name: 'Tailwind CSS',icon: 'fas fa-palette',       label: 'Tailwind' },
+  { name: 'HTML5',        icon: 'fab fa-html5',         label: 'HTML5' },
+  { name: 'CSS3',        icon: 'fab fa-css3-alt',      label: 'CSS3' },
+  { name: 'C++',         icon: 'fas fa-code',          label: 'C++' },
+  { name: 'postman',      icon: 'fas fa-paper-plane',   label: 'Postman' },
+  { name: 'Figma',       icon: 'fas fa-vector-square', label: 'Figma' },
+  { name: 'jira',        icon: 'fas fa-tasks',         label: 'Jira' },
+  { name: 'Trello',      icon: 'fas fa-columns',       label: 'Trello' },
+];
+
+// ─── Services (right col) ──────────────────────────────────────────────────────
+const SERVICES = [
+  {
+    title: 'Full-Stack Web Development',
+    description:
+      'Crafting responsive and efficient web applications using modern technologies like React, Node.js, and Flask, focused on seamless user experiences and maintainable code.',
+    images: [
+      'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80',
+      'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=400&q=80',
+      'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&q=80',
+    ],
+  },
+  {
+    title: 'API Design & Integration',
+    description:
+      'Developing secure, scalable RESTful APIs and integrating third-party services to ensure smooth communication between applications.',
+    images: [
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
+      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&q=80',
+      'https://images.unsplash.com/photo-1639762681057-408e52192e55?w=400&q=80',
+    ],
+  },
+  {
+    title: 'Database Architecture',
+    description:
+      'Designing and optimising SQL and NoSQL databases for high performance, reliability, and scalability in production environments.',
+    images: [
+      'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&q=80',
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80',
+      'https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=400&q=80',
+    ],
+  },
+  {
+    title: 'UI / UX Engineering',
+    description:
+      'Building pixel-perfect, accessible interfaces with thoughtful motion design — turning wireframes into polished, production-ready experiences.',
+    images: [
+      'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80',
+      'https://images.unsplash.com/photo-1545235617-9465d2a55698?w=400&q=80',
+      'https://images.unsplash.com/photo-1576153192621-7a3be10b356e?w=400&q=80',
+    ],
+  },
+];
+
+// ─── Counter ───────────────────────────────────────────────────────────────────
+const CounterItem: React.FC<{ label: string; value: number; suffix?: string }> = ({
+  label, value, suffix = '',
+}) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [display, setDisplay] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const [done, setDone] = useState(false);
 
   useEffect(() => {
     if (!ref.current) return;
     const el = ref.current;
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-          const start = performance.now();
-          const step = (now: number) => {
-            const p = Math.min(1, (now - start) / duration);
-            const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
-            setDisplay(Math.floor(eased * value));
-            if (p < 1) requestAnimationFrame(step);
-          };
-          requestAnimationFrame(step);
-        }
-      });
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !done) {
+        setDone(true);
+        const start = performance.now();
+        const step = (now: number) => {
+          const p = Math.min(1, (now - start) / 1500);
+          const eased = 1 - Math.pow(1 - p, 3);
+          setDisplay(Math.floor(eased * value));
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }
     }, { threshold: 0.3 });
     observer.observe(el);
     return () => observer.disconnect();
-  }, [value, duration, hasAnimated]);
+  }, [value, done]);
 
   return (
-    <div ref={ref} className="p-5 rounded-xl border border-gray-800 bg-gray-900/60 backdrop-blur-sm text-center hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-shadow">
-      <div className="text-3xl sm:text-4xl font-extrabold text-white">
-        {display}
-        {hasAnimated && value > 0 && display >= value ? suffix : ''}
+    <div ref={ref} className="text-center">
+      <div className="text-2xl font-extrabold text-white">
+        {display}{done && display >= value ? suffix : ''}
       </div>
-      <div className="mt-1 text-sm text-gray-400">{label}</div>
+      <div className="text-xs text-gray-400 mt-0.5">{label}</div>
     </div>
   );
 };
 
-const skillIcons = [
-  { name: 'JavaScript', icon: 'fab fa-js', color: 'bg-yellow-500' },
-  { name: 'React', icon: 'fab fa-react', color: 'bg-sky-500' },
-  { name: 'Python', icon: 'fab fa-python', color: 'bg-blue-700' },
-  { name: 'HTML5', icon: 'fab fa-html5', color: 'bg-orange-600' },
-  { name: 'CSS3', icon: 'fab fa-css3-alt', color: 'bg-blue-600' },
-  { name: 'Git', icon: 'fab fa-git-alt', color: 'bg-red-600' },
-  { name: 'GitHub', icon: 'fab fa-github', color: 'bg-gray-800' },
-];
-
+// ─── Main Component ────────────────────────────────────────────────────────────
 const About: React.FC = () => {
-  const [inView, setInView] = useState(false);
-  const sectionRef = useRef<HTMLElement | null>(null);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) setInView(true);
-      });
-    }, { threshold: 0.15 });
-    obs.observe(sectionRef.current);
-    return () => obs.disconnect();
-  }, []);
-
-  // counters data (tweak values as needed)
-  const counters = useMemo(() => ([
-    { label: 'Years of Experience', value: 1, suffix: '+' },
-    { label: 'Projects Completed', value: 6, suffix: '+' },
-    { label: 'Technologies Learned', value: 12, suffix: '+' },
-  ]), []);
-
   return (
-    <section id="about" ref={sectionRef} className="relative py-20 bg-white">
-      {/* Background glow/gradient */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-24 -left-20 w-[36rem] h-[36rem] rounded-full bg-sky-500/20 blur-3xl" />
-        <div className="absolute -bottom-24 -right-20 w-[32rem] h-[32rem] rounded-full bg-indigo-600/20 blur-3xl" />
-        <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
-      </div>
+    <section id="about" className="relative min-h-screen">
+      {/*
+        Desktop: left col sticky (dark) + right col scrollable (light)
+        Mobile:  stacked, dark on top, light below
+      */}
+      <div className="lg:flex lg:min-h-screen">
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Heading */}
-        <div className={`text-center mb-14 ${inView ? 'animate-fade-up' : ''}`}>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white">
-            About <span className="text-sky-400">Me</span>
-          </h2>
-          <p className="mt-3 text-gray-400 max-w-2xl mx-auto">
-            I’m a <span className="text-sky-300">Software Engineering Student</span> with a passion for
-            <span className="text-sky-300"> building digital solutions</span>. I enjoy creating clean, user-focused experiences, collaborating with teams, and learning new technologies every day.
-          </p>
-        </div>
+        {/* ── LEFT COL ── dark sticky bio ────────────────────────────────── */}
+        <div className="lg:w-1/2 lg:sticky lg:top-0 lg:h-screen bg-[#0d1b2a] flex flex-col justify-between px-10 py-16 overflow-hidden">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text column */}
-          <div className={`${inView ? 'animate-slide-in-left' : ''}`}>
-            {/* Info cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="rounded-xl border border-gray-800 bg-gray-900/60 p-5 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-transform transform hover:-translate-y-0.5">
-                <div className="flex items-start gap-3">
-                  <div className="text-2xl">🎓</div>
-                  <div>
-                    <div className="font-semibold text-white">Education</div>
-                    <div className="text-sm text-gray-300">Certificate in Software Engineering</div>
-                    <div className="text-xs text-sky-400">Moringa School • 2025 – Present</div>
-                  </div>
-                </div>
-              </div>
+          {/* Subtle radial glow */}
+          <div aria-hidden className="pointer-events-none absolute inset-0">
+            <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-teal-500/10 blur-3xl -translate-x-1/3 -translate-y-1/3" />
+            <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-sky-600/10 blur-3xl translate-x-1/3 translate-y-1/3" />
+          </div>
 
-              <div className="rounded-xl border border-gray-800 bg-gray-900/60 p-5 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-transform transform hover:-translate-y-0.5">
-                <div className="flex items-start gap-3">
-                  <div className="text-2xl">🌎</div>
-                  <div>
-                    <div className="font-semibold text-white">Location</div>
-                    <div className="text-sm text-gray-300">Nairobi, Kenya</div>
-                    <div className="text-xs text-sky-400">Open to Remote Work</div>
-                  </div>
-                </div>
-              </div>
+          <div className="relative z-10 flex flex-col gap-6 flex-1 justify-center">
+            {/* Profile image — small, top-left feel */}
+            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-teal-500/60 shadow-[0_0_20px_rgba(20,184,166,0.3)]">
+              <img src={Image} alt="Moses Otieno" className="w-full h-full object-cover" />
             </div>
 
-            {/* Skills icons */}
-            <div className="mt-8">
-              <h3 className="text-white font-semibold mb-3">Technical Skills</h3>
-              <div className="flex flex-wrap gap-3">
-                {skillIcons.map((s) => (
-                  <div key={s.name} className="group relative">
-                    <div
-                      className={`w-12 h-12 ${s.color} rounded-lg grid place-items-center text-white shadow-sm transition-transform transform group-hover:-translate-y-0.5 group-hover:shadow-[0_0_22px_rgba(56,189,248,0.35)]`}
-                      title={s.name}
-                    >
-                      <i className={`${s.icon} text-xl`} />
-                    </div>
-                    <span className="pointer-events-none absolute left-1/2 -translate-x-1/2 top-full mt-2 whitespace-nowrap rounded bg-gray-900 text-gray-200 text-xs px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                      {s.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
+            {/* Name */}
+            <div>
+              <p className="text-teal-400 text-sm font-semibold tracking-widest uppercase mb-1">
+                Moses Otieno
+              </p>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-white leading-snug">
+                Hi, I'm <Typewriter />
+              </h2>
             </div>
 
-            {/* Counters */}
-            <div className="mt-8 grid grid-cols-3 gap-3">
-              {counters.map((c) => (
-                <CounterItem key={c.label} label={c.label} value={c.value} suffix={c.suffix} />
+            {/* Bio */}
+            <p className="text-gray-300 text-sm leading-relaxed max-w-md">
+              Passionate software engineering student at Moringa School dedicated to building
+              clean, maintainable, and scalable solutions. I specialise in crafting full-stack
+              applications — from performant React frontends to robust Flask APIs and PostgreSQL
+              databases — following best practices and writing code that's built to last.
+            </p>
+          </div>
+
+          {/* Tech icon strip — bottom */}
+          <div className="relative z-10 pt-8 border-t border-gray-700/60">
+            <p className="text-gray-500 text-xs mb-4 uppercase tracking-widest">Tech Stack</p>
+            <div className="flex flex-wrap gap-4 items-center">
+              {TECH_ICONS.map((t) => (
+                <div key={t.name} className="group relative flex flex-col items-center">
+                  <i
+                    className={`${t.icon} text-2xl text-gray-400 group-hover:text-teal-400 transition-colors`}
+                    title={t.name}
+                  />
+                  <span className="text-[10px] text-gray-600 group-hover:text-teal-500 transition-colors mt-0.5">
+                    {t.label}
+                  </span>
+                </div>
               ))}
             </div>
           </div>
+        </div>
 
-          {/* Image column */}
-          <div className={`relative ${inView ? 'animate-fade-up delay-300' : ''}`}>
-            {/* Image octagon frame with animated glow */}
-            <div className="octagon-frame animate-float-soft">
-              {/* Image card */}
-              <div className="relative group overflow-hidden border border-gray-800 bg-gray-900/50 backdrop-blur-sm clip-octagon">
-                <img
-                  src={Image}
-                  alt="Profile"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out transform group-hover:scale-[1.04]"
-                />
-                {/* Top gradient overlay for polish */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+        {/* ── RIGHT COL ── light scrollable "What I Do" ───────────────────── */}
+        <div className="lg:w-1/2 bg-gray-50 px-8 lg:px-12 py-16">
+          <h3 className="text-2xl font-extrabold text-gray-900 mb-10">What I Do</h3>
+
+          <div className="flex flex-col gap-12">
+            {SERVICES.map((svc) => (
+              <div key={svc.title}>
+                {/* Title row with teal left-bar accent */}
+                <div className="flex items-start gap-3 mb-2">
+                  <span className="mt-1.5 w-1 h-4 rounded-full bg-teal-500 shrink-0" />
+                  <h4 className="text-base font-bold text-gray-900">{svc.title}</h4>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-500 text-sm leading-relaxed mb-4 pl-4">
+                  {svc.description}
+                </p>
+
+                {/* 3-col image grid */}
+                <div className="grid grid-cols-3 gap-2 pl-4">
+                  {svc.images.map((src, i) => (
+                    <div
+                      key={i}
+                      className="aspect-[4/3] rounded-xl overflow-hidden bg-gray-200"
+                    >
+                      <img
+                        src={src}
+                        alt={`${svc.title} ${i + 1}`}
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
+
       </div>
     </section>
   );
