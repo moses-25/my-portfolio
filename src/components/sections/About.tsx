@@ -140,16 +140,16 @@ const About: React.FC = () => {
 
             {/* Name */}
             <div>
-              <p className="text-teal-400 text-sm font-semibold tracking-widest uppercase mb-1">
+              <p className="text-teal-400 text-sm font-display font-semibold tracking-[0.15em] uppercase mb-1">
                 Moses Otieno
               </p>
-              <h2 className="text-3xl lg:text-4xl font-extrabold text-white leading-snug">
+              <h2 className="text-3xl lg:text-4xl font-heading text-white leading-snug">
                 Hi, I'm <Typewriter />
               </h2>
             </div>
 
             {/* Bio */}
-            <p className="text-gray-300 text-sm leading-relaxed max-w-md">
+            <p className="text-gray-300 text-lg leading-relaxed max-w-md font-accent tracking-wide">
               Aspiring full-stack software engineer focused on building modern web applications with React, Flask, and PostgreSQL. Passionate about creating clean, scalable solutions and continuously improving both technical and problem-solving skills through real-world projects.
 
             </p>
@@ -157,7 +157,7 @@ const About: React.FC = () => {
 
           {/* Tech icon strip — bottom */}
           <div className="relative z-10 pt-8 border-t border-gray-700/60">
-            <p className="text-gray-500 text-xs mb-4 uppercase tracking-widest">Tech Stack</p>
+            <p className="text-gray-400 text-xs mb-4 uppercase tracking-[0.2em] font-accent">Tech Stack</p>
             <div className="flex flex-wrap gap-4 items-center">
               {TECH_ICONS.map((t) => (
                 <div key={t.name} className="group relative flex flex-col items-center">
@@ -176,7 +176,7 @@ const About: React.FC = () => {
 
         {/* ── RIGHT COL ── light scrollable "What I Do" ───────────────────── */}
         <div className="lg:w-1/2 bg-gray-50 px-8 lg:px-12 py-16">
-          <h3 className="text-2xl font-extrabold text-gray-900 mb-10">What I Do</h3>
+          <h3 className="text-3xl font-heading text-gray-900 mb-10">What I Do</h3>
 
           <div className="flex flex-col gap-12">
             {SERVICES.map((svc) => (
@@ -184,7 +184,7 @@ const About: React.FC = () => {
                 {/* Title row with teal left-bar accent */}
                 <div className="flex items-start gap-3 mb-2">
                   <span className="mt-1.5 w-1 h-4 rounded-full bg-teal-500 shrink-0" />
-                  <h4 className="text-base font-bold text-gray-900">{svc.title}</h4>
+                  <h4 className="text-lg font-display font-semibold text-gray-900 tracking-wide">{svc.title}</h4>
                 </div>
 
                 {/* Description */}

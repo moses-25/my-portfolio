@@ -6,6 +6,11 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        heading: ['"Nunito Sans"', 'sans-serif'],
+        display: ['"Nunito Sans"', 'sans-serif'],
+        accent: ['"Nunito Sans"', 'sans-serif'],
+      },
       colors: {
         primary: {
           500: '#6366f1',

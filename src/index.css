@@ -7,7 +7,7 @@
 @layer base {
   body {
     @apply text-gray-800 dark:text-gray-200 bg-white dark:bg-dark-900 transition-colors duration-200;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Nunito Sans', system-ui, -apple-system, sans-serif;
   }
 
   h1, h2, h3, h4 {
