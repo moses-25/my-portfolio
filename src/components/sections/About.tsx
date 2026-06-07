@@ -1,6 +1,5 @@
 // src/components/sections/About.tsx
 import React, { useEffect, useState } from 'react';
-import Image from '../../assets/moses.jpg';
 
 // ─── Typewriter ────────────────────────────────────────────────────────────────
 const TITLES = [
@@ -113,11 +112,6 @@ const About: React.FC = () => {
         <div className="lg:w-1/2 lg:sticky lg:top-0 lg:h-screen bg-white flex flex-col justify-between px-10 py-16 overflow-hidden">
 
           <div className="relative z-10 flex flex-col gap-6 flex-1 justify-center">
-            {/* Profile image — small, top-left feel */}
-            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-teal-500/60 shadow-[0_0_20px_rgba(20,184,166,0.3)]">
-              <img src={Image} alt="Moses Otieno" className="w-full h-full object-cover" />
-            </div>
-
             {/* Name */}
             <div>
               <p className="text-black text-sm font-heading tracking-[0.15em] uppercase mb-1">
@@ -129,7 +123,7 @@ const About: React.FC = () => {
             </div>
 
             {/* Bio */}
-            <p className="text-gray-700 text-lg leading-relaxed max-w-md font-accent tracking-wide">
+            <p className="text-gray-700 text-2xl leading-relaxed max-w-md font-accent tracking-wide">
               Aspiring full-stack software engineer focused on building modern web applications with React, Flask, and PostgreSQL. Passionate about creating clean, scalable solutions and continuously improving both technical and problem-solving skills through real-world projects.
 
             </p>
