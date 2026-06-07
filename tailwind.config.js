@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        heading: ['"Nunito Sans"', 'sans-serif'],
+        heading: ['"Archivo Black"', 'sans-serif'],
         display: ['"Nunito Sans"', 'sans-serif'],
         accent: ['"Nunito Sans"', 'sans-serif'],
       },

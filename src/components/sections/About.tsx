@@ -56,7 +56,6 @@ const TECH_ICONS = [
   { name: 'Git',         icon: 'fab fa-git-alt',       label: 'Git' },
   { name: 'JavaScript',  icon: 'fab fa-js',            label: 'JS' },
   { name: 'Linux',       icon: 'fab fa-linux',         label: 'Linux' },
-  { name: 'TypeScript',  icon: 'fab fa-typescript',    label: 'TS' },
   { name: 'Flask',       icon: 'fas fa-flask',         label: 'Flask' },
   { name: 'PostgreSQL',  icon: 'fas fa-database',      label: 'PostgreSQL' },
   { name: 'Tailwind CSS',icon: 'fas fa-palette',       label: 'Tailwind' },
@@ -78,7 +77,6 @@ const SERVICES = [
     images: [
       'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&q=80',
       'https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=400&q=80',
-      'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&q=80',
     ],
   },
   {
@@ -88,7 +86,6 @@ const SERVICES = [
     images: [
       'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80',
       'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&q=80',
-      'https://images.unsplash.com/photo-1639762681057-408e52192e55?w=400&q=80',
     ],
   },
   {
@@ -98,7 +95,6 @@ const SERVICES = [
     images: [
       'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&q=80',
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80',
-      'https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=400&q=80',
     ],
   },
 ];
