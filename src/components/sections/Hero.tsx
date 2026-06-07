@@ -42,15 +42,16 @@ const Hero: React.FC = () => {
         className="pointer-events-none absolute -top-40 -left-40 w-80 h-80 rounded-full bg-sky-700/80 dark:bg-sky-600/60 blur-2xl"
       />
 
+      {/* Logo - Top Left of page */}
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-10 animate-fade-up z-20">
+        <img src="/logo.svg" alt="Logo" className="h-36 sm:h-44 md:h-52 lg:h-64 w-auto brightness-0 dark:brightness-0 dark:invert" />
+      </div>
+
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        {/* Logo - Top Left */}
-        <div className="absolute top-6 left-6 lg:top-8 lg:left-8 animate-fade-up">
-          <img src="/logo.svg" alt="Logo" className="h-32 md:h-40 lg:h-48 w-auto brightness-0 dark:brightness-0 dark:invert" />
-        </div>
 
         {/* Particles background */}
         <ParticlesContainer />
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[80vh]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[80vh] pt-16 sm:pt-0">
           {/* Left content */}
           <div className="lg:col-span-6 order-2 lg:order-1">
             {/* Small arrow and intro */}
