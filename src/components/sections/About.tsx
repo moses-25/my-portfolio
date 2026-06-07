@@ -101,16 +101,6 @@ const SERVICES = [
       'https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=400&q=80',
     ],
   },
-  {
-    title: 'UI / UX Engineering',
-    description:
-      'Building pixel-perfect, accessible interfaces with thoughtful motion design — turning wireframes into polished, production-ready experiences.',
-    images: [
-      'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80',
-      'https://images.unsplash.com/photo-1545235617-9465d2a55698?w=400&q=80',
-      'https://images.unsplash.com/photo-1576153192621-7a3be10b356e?w=400&q=80',
-    ],
-  },
 ];
 
 // ─── Main Component ────────────────────────────────────────────────────────────
@@ -158,18 +148,33 @@ const About: React.FC = () => {
           {/* Tech icon strip — bottom */}
           <div className="relative z-10 pt-8 border-t border-gray-700/60">
             <p className="text-gray-400 text-xs mb-4 uppercase tracking-[0.2em] font-accent">Tech Stack</p>
-            <div className="flex flex-wrap gap-4 items-center">
-              {TECH_ICONS.map((t) => (
-                <div key={t.name} className="group relative flex flex-col items-center">
-                  <i
-                    className={`${t.icon} text-2xl text-gray-400 group-hover:text-teal-400 transition-colors`}
-                    title={t.name}
-                  />
-                  <span className="text-[10px] text-gray-600 group-hover:text-teal-500 transition-colors mt-0.5">
-                    {t.label}
-                  </span>
-                </div>
-              ))}
+            <div className="space-y-3 overflow-hidden">
+              <div className="flex gap-6 items-center animate-scroll-left" style={{ width: 'max-content' }}>
+                {[...TECH_ICONS.slice(0, 9), ...TECH_ICONS.slice(0, 9)].map((t, i) => (
+                  <div key={i} className="group relative flex flex-col items-center flex-shrink-0">
+                    <i
+                      className={`${t.icon} text-2xl text-gray-400 group-hover:text-teal-400 transition-colors`}
+                      title={t.name}
+                    />
+                    <span className="text-[10px] text-gray-600 group-hover:text-teal-500 transition-colors mt-0.5">
+                      {t.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex gap-6 items-center animate-scroll-right" style={{ width: 'max-content' }}>
+                {[...TECH_ICONS.slice(9), ...TECH_ICONS.slice(9)].map((t, i) => (
+                  <div key={i} className="group relative flex flex-col items-center flex-shrink-0">
+                    <i
+                      className={`${t.icon} text-2xl text-gray-400 group-hover:text-teal-400 transition-colors`}
+                      title={t.name}
+                    />
+                    <span className="text-[10px] text-gray-600 group-hover:text-teal-500 transition-colors mt-0.5">
+                      {t.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

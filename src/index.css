@@ -226,6 +226,22 @@
   .animate-float-soft { animation: float-soft 6s ease-in-out infinite; will-change: transform; }
 }
 
+/* Scrolling animations for skill cards */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-scroll-left {
+  animation: scroll-left 20s linear infinite;
+}
+.animate-scroll-right {
+  animation: scroll-right 20s linear infinite;
+}
+
 /* Custom utilities */
 @layer utilities {
   .text-balance {

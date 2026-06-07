@@ -67,7 +67,7 @@ const Skills: React.FC = () => {
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-3">
                     <span className="text-sky-500 text-xl"><i className={skill.icon} /></span>
-                    <span className="font-semibold">{skill.name}</span>
+                    <span className="font-semibold text-lg">{skill.name}</span>
                   </div>
                   <span className="text-sm text-sky-400 font-medium tabular-nums">{skill.level}%</span>
                 </div>
@@ -94,11 +94,22 @@ const Skills: React.FC = () => {
             ))}
           </div>
 
-          {/* Keep skill cards grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
-            {skillsData.map((skill, index) => (
-              <SkillCard key={index} skill={skill} />
-            ))}
+          {/* Scrolling skill card rows */}
+          <div className="space-y-6 overflow-hidden">
+            <div className="flex gap-4 animate-scroll-left" style={{ width: 'max-content' }}>
+              {[...skillsData.slice(0, 5), ...skillsData.slice(0, 5)].map((skill, i) => (
+                <div key={i} className="flex-shrink-0">
+                  <SkillCard skill={skill} />
+                </div>
+              ))}
+            </div>
+            <div className="flex gap-4 animate-scroll-right" style={{ width: 'max-content' }}>
+              {[...skillsData.slice(5), ...skillsData.slice(5)].map((skill, i) => (
+                <div key={i} className="flex-shrink-0">
+                  <SkillCard skill={skill} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

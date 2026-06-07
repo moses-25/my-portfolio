@@ -12,7 +12,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill }) => {
       <div className={`w-12 h-12 ${skill.color} rounded-lg flex items-center justify-center text-white mb-4`}>
         <i className={`${skill.icon} text-xl`}></i>
       </div>
-      <h3 className="text-lg font-semibold">{skill.name}</h3>
+      <h3 className="text-xl font-semibold">{skill.name}</h3>
     </div>
   );
 };
