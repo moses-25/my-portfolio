@@ -1,5 +1,5 @@
 // src/components/sections/About.tsx
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from '../../assets/moses.jpg';
 
 // ─── Typewriter ────────────────────────────────────────────────────────────────
@@ -113,44 +113,6 @@ const SERVICES = [
   },
 ];
 
-// ─── Counter ───────────────────────────────────────────────────────────────────
-const CounterItem: React.FC<{ label: string; value: number; suffix?: string }> = ({
-  label, value, suffix = '',
-}) => {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [display, setDisplay] = useState(0);
-  const [done, setDone] = useState(false);
-
-  useEffect(() => {
-    if (!ref.current) return;
-    const el = ref.current;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting && !done) {
-        setDone(true);
-        const start = performance.now();
-        const step = (now: number) => {
-          const p = Math.min(1, (now - start) / 1500);
-          const eased = 1 - Math.pow(1 - p, 3);
-          setDisplay(Math.floor(eased * value));
-          if (p < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-      }
-    }, { threshold: 0.3 });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [value, done]);
-
-  return (
-    <div ref={ref} className="text-center">
-      <div className="text-2xl font-extrabold text-white">
-        {display}{done && display >= value ? suffix : ''}
-      </div>
-      <div className="text-xs text-gray-400 mt-0.5">{label}</div>
-    </div>
-  );
-};
-
 // ─── Main Component ────────────────────────────────────────────────────────────
 const About: React.FC = () => {
   return (
@@ -188,10 +150,8 @@ const About: React.FC = () => {
 
             {/* Bio */}
             <p className="text-gray-300 text-sm leading-relaxed max-w-md">
-              Passionate software engineering student at Moringa School dedicated to building
-              clean, maintainable, and scalable solutions. I specialise in crafting full-stack
-              applications — from performant React frontends to robust Flask APIs and PostgreSQL
-              databases — following best practices and writing code that's built to last.
+              Aspiring full-stack software engineer focused on building modern web applications with React, Flask, and PostgreSQL. Passionate about creating clean, scalable solutions and continuously improving both technical and problem-solving skills through real-world projects.
+
             </p>
           </div>
 
