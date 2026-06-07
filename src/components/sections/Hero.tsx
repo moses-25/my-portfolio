@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
           {/* Right imagery */}
           <div className="lg:col-span-6 relative order-1 lg:order-2 w-full flex justify-center lg:justify-end">
             {/* Portrait */}
-            <div className="relative w-full max-w-md md:max-w-lg lg:max-w-xl">
+            <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl">
               <img
                 src={ProfileImage}
                 alt="Portrait"
