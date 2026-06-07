@@ -114,13 +114,7 @@ const About: React.FC = () => {
       <div className="lg:flex lg:min-h-screen">
 
         {/* ── LEFT COL ── dark sticky bio ────────────────────────────────── */}
-        <div className="lg:w-1/2 lg:sticky lg:top-0 lg:h-screen bg-[#0d1b2a] flex flex-col justify-between px-10 py-16 overflow-hidden">
-
-          {/* Subtle radial glow */}
-          <div aria-hidden className="pointer-events-none absolute inset-0">
-            <div className="absolute top-0 left-0 w-96 h-96 rounded-full bg-teal-500/10 blur-3xl -translate-x-1/3 -translate-y-1/3" />
-            <div className="absolute bottom-0 right-0 w-80 h-80 rounded-full bg-sky-600/10 blur-3xl translate-x-1/3 translate-y-1/3" />
-          </div>
+        <div className="lg:w-1/2 lg:sticky lg:top-0 lg:h-screen bg-white flex flex-col justify-between px-10 py-16 overflow-hidden">
 
           <div className="relative z-10 flex flex-col gap-6 flex-1 justify-center">
             {/* Profile image — small, top-left feel */}
@@ -130,33 +124,33 @@ const About: React.FC = () => {
 
             {/* Name */}
             <div>
-              <p className="text-teal-400 text-sm font-display font-semibold tracking-[0.15em] uppercase mb-1">
+              <p className="text-teal-600 text-sm font-display font-semibold tracking-[0.15em] uppercase mb-1">
                 Moses Otieno
               </p>
-              <h2 className="text-3xl lg:text-4xl font-heading text-white leading-snug">
+              <h2 className="text-3xl lg:text-4xl font-heading text-gray-900 leading-snug">
                 Hi, I'm <Typewriter />
               </h2>
             </div>
 
             {/* Bio */}
-            <p className="text-gray-300 text-lg leading-relaxed max-w-md font-accent tracking-wide">
+            <p className="text-gray-700 text-lg leading-relaxed max-w-md font-accent tracking-wide">
               Aspiring full-stack software engineer focused on building modern web applications with React, Flask, and PostgreSQL. Passionate about creating clean, scalable solutions and continuously improving both technical and problem-solving skills through real-world projects.
 
             </p>
           </div>
 
           {/* Tech icon strip — bottom */}
-          <div className="relative z-10 pt-8 border-t border-gray-700/60">
-            <p className="text-gray-400 text-xs mb-4 uppercase tracking-[0.2em] font-accent">Tech Stack</p>
+          <div className="relative z-10 pt-8 border-t border-gray-200">
+            <p className="text-gray-800 text-xs mb-4 uppercase tracking-[0.2em] font-accent">Tech Stack</p>
             <div className="space-y-3 overflow-hidden">
               <div className="flex gap-6 items-center animate-scroll-left" style={{ width: 'max-content' }}>
                 {[...TECH_ICONS.slice(0, 9), ...TECH_ICONS.slice(0, 9)].map((t, i) => (
                   <div key={i} className="group relative flex flex-col items-center flex-shrink-0">
                     <i
-                      className={`${t.icon} text-2xl text-gray-400 group-hover:text-teal-400 transition-colors`}
+                      className={`${t.icon} text-4xl text-gray-700 group-hover:text-teal-600 transition-colors`}
                       title={t.name}
                     />
-                    <span className="text-[10px] text-gray-600 group-hover:text-teal-500 transition-colors mt-0.5">
+                    <span className="text-[10px] text-gray-800 group-hover:text-teal-600 transition-colors mt-0.5">
                       {t.label}
                     </span>
                   </div>
@@ -166,10 +160,10 @@ const About: React.FC = () => {
                 {[...TECH_ICONS.slice(9), ...TECH_ICONS.slice(9)].map((t, i) => (
                   <div key={i} className="group relative flex flex-col items-center flex-shrink-0">
                     <i
-                      className={`${t.icon} text-2xl text-gray-400 group-hover:text-teal-400 transition-colors`}
+                      className={`${t.icon} text-4xl text-gray-700 group-hover:text-teal-600 transition-colors`}
                       title={t.name}
                     />
-                    <span className="text-[10px] text-gray-600 group-hover:text-teal-500 transition-colors mt-0.5">
+                    <span className="text-[10px] text-gray-800 group-hover:text-teal-600 transition-colors mt-0.5">
                       {t.label}
                     </span>
                   </div>
@@ -180,7 +174,7 @@ const About: React.FC = () => {
         </div>
 
         {/* ── RIGHT COL ── light scrollable "What I Do" ───────────────────── */}
-        <div className="lg:w-1/2 bg-gray-50 px-8 lg:px-12 py-16">
+        <div className="lg:w-1/2 bg-white px-8 lg:px-12 py-16">
           <h3 className="text-3xl font-heading text-gray-900 mb-10">What I Do</h3>
 
           <div className="flex flex-col gap-12">
