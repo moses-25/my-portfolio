@@ -1,6 +1,5 @@
 // src/components/ui/ProjectCard.tsx
 import React from 'react';
-import { useTheme } from '../../context/ThemeContext';
 import { Project } from '../../types';
 
 interface ProjectCardProps {
@@ -8,9 +7,8 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const { darkMode } = useTheme();
   return (
-    <div className={`rounded-xl overflow-hidden shadow-lg ${darkMode ? 'bg-gray-900' : 'bg-white'} transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl`}>
+    <div className="rounded-xl overflow-hidden shadow-lg bg-white transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl">
       <div className="relative overflow-hidden h-48">
         <img 
           src={project.image} 
@@ -22,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="p-6">
         <h3 className="text-xl font-bold mb-3">{project.title}</h3>
         
-        <p className="mb-4 text-black-600 dark:text-black-400">{project.description}</p>
+        <p className="mb-4 text-black-600">{project.description}</p>
         
         <div className="mb-6 flex flex-wrap gap-2">
           {project.tech.map((tech, techIndex) => (

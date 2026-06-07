@@ -8,10 +8,8 @@ import Projects from './components/sections/Projects';
 import Contact from './components/sections/Contact';
 import Footer from './components/sections/Footer';
 import BackToTop from './components/common/BackToTop';
-import { useTheme } from './context/ThemeContext';
 
 const App: React.FC = () => {
-  const { darkMode } = useTheme();
 
   useEffect(() => {
     const glow = document.createElement('div');
@@ -64,7 +62,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gray-900 text-gray-100' : 'bg-white text-gray-800'} transition-colors duration-300`}>
+    <div className="min-h-screen bg-white text-gray-800 transition-colors duration-300">
       <Navbar />
       <Hero />
       <About />

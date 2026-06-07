@@ -1,6 +1,5 @@
 // src/components/common/Button.tsx
 import React from 'react';
-import { useTheme } from '../../context/ThemeContext';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -19,13 +18,12 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
   icon,
 }) => {
-  const { darkMode } = useTheme();
   const baseClasses = 'px-6 py-3 font-medium rounded-lg transition-colors duration-300 flex items-center justify-center';
   
   const variantClasses = {
     primary: 'bg-indigo-600 hover:bg-indigo-700 text-white',
     secondary: 'bg-white hover:bg-gray-100 text-indigo-600',
-    outline: `border ${darkMode ? 'border-gray-600 hover:border-gray-500' : 'border-gray-300 hover:border-gray-400'} text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700`
+    outline: 'border border-gray-300 hover:border-gray-400 text-gray-700 hover:bg-gray-50'
   };
 
   return (

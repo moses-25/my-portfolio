@@ -1,6 +1,5 @@
 // src/components/sections/Contact.tsx
 import React, { useEffect, useRef, useState } from 'react';
-import { useTheme } from '../../context/ThemeContext';
 
 interface FormState {
   name: string;
@@ -19,7 +18,6 @@ interface FormErrors {
 const initialState: FormState = { name: '', email: '', subject: '', message: '' };
 
 const Contact: React.FC = () => {
-  const { darkMode } = useTheme();
   const [form, setForm] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<FormErrors>({});
   const [success, setSuccess] = useState<string>('');
@@ -67,12 +65,12 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className={`relative py-20 ${darkMode ? 'bg-black' : 'bg-white'} transition-colors duration-300`}>
+    <section id="contact" ref={sectionRef} className="relative py-20 bg-white transition-colors duration-300">
       {/* Background glow/gradient */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -top-24 -left-20 w-[32rem] h-[32rem] rounded-full bg-sky-500/20 blur-3xl" />
         <div className="absolute -bottom-24 -right-20 w-[28rem] h-[28rem] rounded-full bg-indigo-600/20 blur-3xl" />
-        <div className="absolute inset-0 opacity-10 dark:opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,7 +92,7 @@ const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left: Contact form */}
           <div className={`${inView ? 'animate-slide-in-left' : ''}`}>
-            <form onSubmit={handleSubmit} className={`rounded-2xl overflow-hidden shadow-lg ${darkMode ? 'bg-gray-900/70' : 'bg-white'} border border-gray-800 p-6 sm:p-8 backdrop-blur-sm`}>
+            <form onSubmit={handleSubmit} className="rounded-2xl overflow-hidden shadow-lg bg-white border border-gray-800 p-6 sm:p-8 backdrop-blur-sm">
               {/* Name */}
               <div className="mb-6">
                 <div className="relative">
@@ -105,11 +103,11 @@ const Contact: React.FC = () => {
                     placeholder=" "
                     value={form.name}
                     onChange={handleChange}
-                    className={`peer w-full px-4 pt-6 pb-2 rounded-lg bg-transparent border ${darkMode ? 'border-gray-700 text-white' : 'border-gray-300 text-gray-900'} focus:outline-none focus:ring-2 focus:ring-sky-500`}
+                    className="peer w-full px-4 pt-6 pb-2 rounded-lg bg-transparent border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-sky-500"
                     aria-invalid={!!errors.name}
                     aria-describedby="name-error"
                   />
-                  <label htmlFor="name" className={`absolute left-4 top-3 text-sm transition-all duration-200 ${darkMode ? 'text-gray-400' : 'text-gray-500'} peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-sky-400 ${form.name ? 'top-1 text-xs text-sky-400' : ''}`}>
+                  <label htmlFor="name" className={`absolute left-4 top-3 text-sm transition-all duration-200 text-gray-500 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-sky-400 ${form.name ? 'top-1 text-xs text-sky-400' : ''}`}>
                     Your Name
                   </label>
                 </div>
@@ -126,11 +124,11 @@ const Contact: React.FC = () => {
                     placeholder=" "
                     value={form.email}
                     onChange={handleChange}
-                    className={`peer w-full px-4 pt-6 pb-2 rounded-lg bg-transparent border ${darkMode ? 'border-gray-700 text-white' : 'border-gray-300 text-gray-900'} focus:outline-none focus:ring-2 focus:ring-sky-500`}
+                    className="peer w-full px-4 pt-6 pb-2 rounded-lg bg-transparent border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-sky-500"
                     aria-invalid={!!errors.email}
                     aria-describedby="email-error"
                   />
-                  <label htmlFor="email" className={`absolute left-4 top-3 text-sm transition-all duration-200 ${darkMode ? 'text-gray-400' : 'text-gray-500'} peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-sky-400 ${form.email ? 'top-1 text-xs text-sky-400' : ''}`}>
+                  <label htmlFor="email" className={`absolute left-4 top-3 text-sm transition-all duration-200 text-gray-500 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-sky-400 ${form.email ? 'top-1 text-xs text-sky-400' : ''}`}>
                     Your Email
                   </label>
                 </div>
@@ -147,11 +145,11 @@ const Contact: React.FC = () => {
                     placeholder=" "
                     value={form.subject}
                     onChange={handleChange}
-                    className={`peer w-full px-4 pt-6 pb-2 rounded-lg bg-transparent border ${darkMode ? 'border-gray-700 text-white' : 'border-gray-300 text-gray-900'} focus:outline-none focus:ring-2 focus:ring-sky-500`}
+                    className="peer w-full px-4 pt-6 pb-2 rounded-lg bg-transparent border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-sky-500"
                     aria-invalid={!!errors.subject}
                     aria-describedby="subject-error"
                   />
-                  <label htmlFor="subject" className={`absolute left-4 top-3 text-sm transition-all duration-200 ${darkMode ? 'text-gray-400' : 'text-gray-500'} peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-sky-400 ${form.subject ? 'top-1 text-xs text-sky-400' : ''}`}>
+                  <label htmlFor="subject" className={`absolute left-4 top-3 text-sm transition-all duration-200 text-gray-500 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-sky-400 ${form.subject ? 'top-1 text-xs text-sky-400' : ''}`}>
                     Subject
                   </label>
                 </div>
@@ -168,11 +166,11 @@ const Contact: React.FC = () => {
                     placeholder=" "
                     value={form.message}
                     onChange={handleChange}
-                    className={`peer w-full px-4 pt-6 pb-2 rounded-lg bg-transparent border ${darkMode ? 'border-gray-700 text-white' : 'border-gray-300 text-gray-900'} focus:outline-none focus:ring-2 focus:ring-sky-500`}
+                    className="peer w-full px-4 pt-6 pb-2 rounded-lg bg-transparent border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-sky-500"
                     aria-invalid={!!errors.message}
                     aria-describedby="message-error"
                   />
-                  <label htmlFor="message" className={`absolute left-4 top-3 text-sm transition-all duration-200 ${darkMode ? 'text-gray-400' : 'text-gray-500'} peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-sky-400 ${form.message ? 'top-1 text-xs text-sky-400' : ''}`}>
+                  <label htmlFor="message" className={`absolute left-4 top-3 text-sm transition-all duration-200 text-gray-500 peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-sky-400 ${form.message ? 'top-1 text-xs text-sky-400' : ''}`}>
                     Your Message
                   </label>
                 </div>
@@ -203,7 +201,7 @@ const Contact: React.FC = () => {
           <div className={`${inView ? 'animate-fade-up delay-300' : ''}`}>
             <div className="grid grid-cols-1 gap-4">
               {/* Email */}
-              <div className={`rounded-xl overflow-hidden shadow-lg ${darkMode ? 'bg-gray-900/70' : 'bg-white'} border border-gray-800 p-6 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-transform hover:-translate-y-0.5`}>
+              <div className="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-800 p-6 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-transform hover:-translate-y-0.5">
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center mr-4">
                     <span className="text-2xl">✉️</span>
@@ -216,7 +214,7 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Location */}
-              <div className={`rounded-xl overflow-hidden shadow-lg ${darkMode ? 'bg-gray-900/70' : 'bg-white'} border border-gray-800 p-6 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-transform hover:-translate-y-0.5`}>
+              <div className="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-800 p-6 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-transform hover:-translate-y-0.5">
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center mr-4">
                     <span className="text-2xl">🌎</span>
@@ -229,7 +227,7 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Hours */}
-              <div className={`rounded-xl overflow-hidden shadow-lg ${darkMode ? 'bg-gray-900/70' : 'bg-white'} border border-gray-800 p-6 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-transform hover:-translate-y-0.5`}>
+              <div className="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-800 p-6 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-transform hover:-translate-y-0.5">
                 <div className="flex items-start">
                   <div className="w-12 h-12 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center mr-4">
                     <span className="text-2xl">⏰</span>
@@ -242,7 +240,7 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Socials */}
-              <div className={`rounded-xl overflow-hidden shadow-lg ${darkMode ? 'bg-gray-900/70' : 'bg-white'} border border-gray-800 p-6`}>
+              <div className="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-800 p-6">
                 <h3 className="font-semibold text-white mb-4">Find me on</h3>
                 <div className="flex gap-4">
                   <a

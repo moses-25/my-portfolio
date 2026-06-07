@@ -1,9 +1,7 @@
 // src/components/sections/Footer.tsx
 import React from 'react';
-import { useTheme } from '../../context/ThemeContext';
 
 const Footer: React.FC = () => {
-  const { darkMode } = useTheme();
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -12,7 +10,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className={`py-12 ${darkMode ? 'bg-black text-gray-300' : 'bg-gray-800 text-gray-200'}`}>
+    <footer className="py-12 bg-gray-800 text-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">

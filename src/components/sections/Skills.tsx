@@ -2,7 +2,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import SkillCard from '../ui/SkillCard';
 import { skillsData } from '../../utils/constants';
-import { useTheme } from '../../context/ThemeContext';
 
 const levelsByName: Record<string, number> = {
   JavaScript: 50,
@@ -18,7 +17,6 @@ const levelsByName: Record<string, number> = {
 };
 
 const Skills: React.FC = () => {
-  const { darkMode } = useTheme();
   const [animate, setAnimate] = useState(false);
   const metersRef = useRef<HTMLDivElement>(null);
 
@@ -48,7 +46,7 @@ const Skills: React.FC = () => {
   }, []);
 
   return (
-    <section id="skills" className={`py-20 ${darkMode ? 'bg-black' : 'bg-white'}`}>
+    <section id="skills" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Skills</h2>
@@ -74,7 +72,7 @@ const Skills: React.FC = () => {
                   <span className="text-sm text-sky-400 font-medium tabular-nums">{skill.level}%</span>
                 </div>
 
-                <div className={`relative h-3 rounded-full overflow-hidden ${darkMode ? 'bg-gray-800' : 'bg-gray-200'}`}>
+                <div className="relative h-3 rounded-full overflow-hidden bg-gray-200">
                   <div
                     className={`absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-sky-500 via-cyan-400 to-sky-400 shadow-[0_0_20px_rgba(56,189,248,0.35)]`}
                     style={{

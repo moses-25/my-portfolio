@@ -32,19 +32,19 @@ const Hero: React.FC = () => {
         <div className="blob"></div>
         <div className="blob"></div>
       </div>
-      <div className="absolute inset-0 z-0 opacity-10 dark:opacity-10 pointer-events-none">
+      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       </div>
 
       {/* Decorative top-left circle */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 -left-40 w-80 h-80 rounded-full bg-sky-700/80 dark:bg-sky-600/60 blur-2xl"
+        className={`pointer-events-none absolute -top-40 -left-40 w-80 h-80 rounded-full ${darkMode ? 'bg-sky-600/60' : 'bg-sky-700/80'} blur-2xl`}
       />
 
       {/* Logo - Top Left of page */}
       <div className="absolute top-4 left-4 sm:top-6 sm:left-6 lg:top-8 lg:left-10 animate-fade-up z-20">
-        <img src="/logo.svg" alt="Logo" className="h-36 sm:h-44 md:h-52 lg:h-64 w-auto brightness-0 dark:brightness-0 dark:invert" />
+        <img src="/logo.svg" alt="Logo" className={`h-36 sm:h-44 md:h-52 lg:h-64 w-auto brightness-0 ${darkMode ? 'invert' : ''}`} />
       </div>
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-gray-900 dark:text-white animate-slide-in-left delay-300">
+              <h1 className={`text-5xl md:text-7xl font-extrabold leading-tight ${darkMode ? 'text-white' : 'text-gray-900'} animate-slide-in-left delay-300`}>
                 Software Engineer
                 <span className="text-sky-500 animate-glow-blue">.</span>
               </h1>
@@ -80,11 +80,11 @@ const Hero: React.FC = () => {
 
             {/* Social icons */}
             <div className="mt-8 flex items-center gap-6 text-2xl">
-              <a href="https://github.com/moses-25" aria-label="GitHub" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md"><i className="fab fa-github" /></a>
-              <a href="https://www.linkedin.com/in/moses-o-311b2235a/" aria-label="LinkedIn" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md"><i className="fab fa-linkedin" /></a>
-              <a href="https://x.com/moses_kingstone" aria-label="Twitter" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md"><i className="fab fa-twitter" /></a>
-              <a href="https://wa.me/+254757268162" aria-label="WhatsApp" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md"><i className="fab fa-whatsapp" /></a>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mosesotieno8363@gmail.com" aria-label="Email" className="text-gray-700 dark:text-gray-300 hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md"><i className="fas fa-envelope" /></a>
+              <a href="https://github.com/moses-25" aria-label="GitHub" className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md`}><i className="fab fa-github" /></a>
+              <a href="https://www.linkedin.com/in/moses-o-311b2235a/" aria-label="LinkedIn" className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md`}><i className="fab fa-linkedin" /></a>
+              <a href="https://x.com/moses_kingstone" aria-label="Twitter" className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md`}><i className="fab fa-twitter" /></a>
+              <a href="https://wa.me/+254757268162" aria-label="WhatsApp" className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md`}><i className="fab fa-whatsapp" /></a>
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mosesotieno8363@gmail.com" aria-label="Email" className={`${darkMode ? 'text-gray-300' : 'text-gray-700'} hover:text-sky-600 transition-all duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-[0_10px_12px_rgba(14,165,233,0.35)] active:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500/50 rounded-md`}><i className="fas fa-envelope" /></a>
             </div>
           </div>
 
@@ -104,10 +104,10 @@ const Hero: React.FC = () => {
               {roles.map((role) => (
                 <div
                   key={role.label}
-                  className="flex items-center gap-3 bg-white/90 dark:bg-gray-900/80 border border-gray-200/60 dark:border-gray-700 rounded-xl px-4 py-3 shadow-lg backdrop-blur-sm"
+                  className={`flex items-center gap-3 rounded-xl px-4 py-3 shadow-lg backdrop-blur-sm ${darkMode ? 'bg-gray-900/80 border-gray-700' : 'bg-white/90 border-gray-200/60'} border`}
                 >
                   <span className="text-2xl text-sky-600"><i className={role.icon} /></span>
-                  <span className="font-semibold text-gray-900 dark:text-white whitespace-nowrap">{role.label}</span>
+                  <span className={`font-semibold whitespace-nowrap ${darkMode ? 'text-white' : 'text-gray-900'}`}>{role.label}</span>
                 </div>
               ))}
             </div>

@@ -1,8 +1,6 @@
 // src/components/sections/About.tsx
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Image from '../../assets/moses.jpg';
-import { useTheme } from '../../context/ThemeContext';
-
 // Counter with intersection-based reveal and RAF animation
 const CounterItem: React.FC<{ label: string; value: number; suffix?: string; duration?: number }>
   = ({ label, value, suffix = '', duration = 1500 }) => {
@@ -54,7 +52,6 @@ const skillIcons = [
 ];
 
 const About: React.FC = () => {
-  const { darkMode } = useTheme();
   const [inView, setInView] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
@@ -77,12 +74,12 @@ const About: React.FC = () => {
   ]), []);
 
   return (
-    <section id="about" ref={sectionRef} className={`relative py-20 ${darkMode ? 'bg-black' : 'bg-white'}`}>
+    <section id="about" ref={sectionRef} className="relative py-20 bg-white">
       {/* Background glow/gradient */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -top-24 -left-20 w-[36rem] h-[36rem] rounded-full bg-sky-500/20 blur-3xl" />
         <div className="absolute -bottom-24 -right-20 w-[32rem] h-[32rem] rounded-full bg-indigo-600/20 blur-3xl" />
-        <div className="absolute inset-0 opacity-10 dark:opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
