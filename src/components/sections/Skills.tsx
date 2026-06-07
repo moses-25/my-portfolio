@@ -94,7 +94,7 @@ const DAY_LABELS: { label: string; index: number }[] = [
 const TOOLS: { category: string; items: string[] }[] = [
   {
     category: 'Frontend',
-    items: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Vite', 'HTML5', 'CSS3', 'Framer Motion'],
+    items: ['React', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3'],
   },
   {
     category: 'Backend',
@@ -102,15 +102,15 @@ const TOOLS: { category: string; items: string[] }[] = [
   },
   {
     category: 'Database',
-    items: ['PostgreSQL', 'SQLite', 'SQL', 'Alembic'],
+    items: ['PostgreSQL', 'SQLite'],
   },
   {
     category: 'Dev & Tools',
-    items: ['Git', 'GitHub', 'Linux', 'VS Code', 'Postman', 'Vercel', 'Render'],
+    items: ['Git', 'GitHub', 'Linux', 'Postman', 'Vercel', 'Render'],
   },
   {
     category: 'Design',
-    items: ['Figma', 'Glassmorphism', 'Responsive Design', 'Accessibility'],
+    items: ['Figma', 'Canva'],
   },
 ];
 
@@ -469,9 +469,6 @@ const Skills: React.FC = () => {
 
         {/* ── Tools I Use ──────────────────────────────────────────────────── */}
         <div className="mb-6">
-          <p style={{ color: '#3fb950', fontSize: 13, fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 6 }}>
-            Toolkit
-          </p>
           <h3 style={{ fontFamily: "'Syne', sans-serif", fontSize: 28, fontWeight: 800, color: '#e6edf3', marginBottom: 24 }}>
             Tools I Use
           </h3>
