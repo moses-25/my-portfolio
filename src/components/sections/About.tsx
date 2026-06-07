@@ -109,7 +109,7 @@ const About: React.FC = () => {
       <div className="lg:flex lg:min-h-screen">
 
         {/* ── LEFT COL ── dark sticky bio ────────────────────────────────── */}
-        <div className="lg:w-1/2 lg:sticky lg:top-0 lg:h-screen bg-white flex flex-col justify-between px-10 py-16 overflow-hidden">
+        <div className="lg:w-1/2 lg:sticky lg:top-0 lg:h-screen bg-white flex flex-col justify-between px-10 pt-6 pb-4 overflow-hidden">
 
           <div className="relative z-10 flex flex-col gap-6 flex-1 justify-center">
             {/* Name */}
@@ -137,7 +137,7 @@ const About: React.FC = () => {
                 {[...TECH_ICONS.slice(0, 9), ...TECH_ICONS.slice(0, 9)].map((t, i) => (
                   <div key={i} className="group relative flex flex-col items-center flex-shrink-0">
                     <i
-                      className={`${t.icon} text-4xl text-gray-700 group-hover:text-teal-600 transition-colors`}
+                      className={`${t.icon} text-5xl text-gray-700 group-hover:text-teal-600 transition-colors`}
                       title={t.name}
                     />
                     <span className="text-[10px] text-gray-800 group-hover:text-teal-600 transition-colors mt-0.5">
@@ -150,7 +150,7 @@ const About: React.FC = () => {
                 {[...TECH_ICONS.slice(9), ...TECH_ICONS.slice(9)].map((t, i) => (
                   <div key={i} className="group relative flex flex-col items-center flex-shrink-0">
                     <i
-                      className={`${t.icon} text-4xl text-gray-700 group-hover:text-teal-600 transition-colors`}
+                      className={`${t.icon} text-5xl text-gray-700 group-hover:text-teal-600 transition-colors`}
                       title={t.name}
                     />
                     <span className="text-[10px] text-gray-800 group-hover:text-teal-600 transition-colors mt-0.5">
