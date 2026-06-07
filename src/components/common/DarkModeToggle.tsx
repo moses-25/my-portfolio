@@ -14,11 +14,14 @@ const DarkModeToggle = ({ compact = false }: DarkModeToggleProps) => {
         onClick={toggleDarkMode}
         title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
         aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-        className="
+        className={`
           group relative w-11 h-11 flex items-center justify-center rounded-2xl
-          text-white/50 hover:text-white/90 hover:bg-white/10
           transition-all duration-200
-        "
+          ${darkMode 
+            ? 'text-white/50 hover:text-white/90 hover:bg-white/10' 
+            : 'text-gray-600 hover:text-gray-900 hover:bg-gray-300/20'
+          }
+        `}
       >
         {darkMode ? (
           <svg className="w-[18px] h-[18px]" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
@@ -39,14 +42,15 @@ const DarkModeToggle = ({ compact = false }: DarkModeToggleProps) => {
         )}
 
         {/* Tooltip */}
-        <span className="
+        <span className={`
           absolute left-full ml-3 px-2.5 py-1
-          bg-gray-900 dark:bg-gray-800 text-white text-xs font-medium
+          ${darkMode ? 'bg-gray-900 dark:bg-gray-800 text-white' : 'bg-gray-200 text-gray-900'}
+          text-xs font-medium
           rounded-lg whitespace-nowrap
           opacity-0 pointer-events-none -translate-x-1
           group-hover:opacity-100 group-hover:translate-x-0
           transition-all duration-150 shadow-lg
-        ">
+        `}>
           {darkMode ? 'Light mode' : 'Dark mode'}
         </span>
       </button>
@@ -58,15 +62,16 @@ const DarkModeToggle = ({ compact = false }: DarkModeToggleProps) => {
     <button
       onClick={toggleDarkMode}
       aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-      className="
+      className={`
         flex items-center gap-2.5 px-4 py-2.5 rounded-xl
-        bg-white/10 hover:bg-white/20
-        border border-white/15 hover:border-white/25
-        text-white/80 hover:text-white
         text-sm font-medium
         transition-all duration-200
         backdrop-blur-sm
-      "
+        ${darkMode
+          ? 'bg-white/10 hover:bg-white/20 border border-white/15 hover:border-white/25 text-white/80 hover:text-white'
+          : 'bg-gray-300/20 hover:bg-gray-300/30 border border-gray-400/30 hover:border-gray-400/40 text-gray-700 hover:text-gray-900'
+        }
+      `}
     >
       {darkMode ? (
         <>

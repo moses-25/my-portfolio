@@ -43,6 +43,11 @@ const Hero: React.FC = () => {
       />
 
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
+        {/* Logo - Top Left */}
+        <div className="absolute top-6 left-6 lg:top-8 lg:left-8 animate-fade-up">
+          <img src="/logo.svg" alt="Logo" className="h-32 md:h-40 lg:h-48 w-auto brightness-0 dark:brightness-0 dark:invert" />
+        </div>
+
         {/* Particles background */}
         <ParticlesContainer />
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[80vh]">
@@ -54,7 +59,6 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="space-y-4">
-              <p className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 animate-fade-up">Freelancer</p>
               <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-gray-900 dark:text-white animate-slide-in-left delay-300">
                 Software Engineer
                 <span className="text-sky-500 animate-glow-blue">.</span>
@@ -92,10 +96,6 @@ const Hero: React.FC = () => {
                 alt="Portrait"
                 className="w-full h-auto object-contain rounded-full drop-shadow-[0_20px_50px_rgba(14,165,233,0.25)] animate-bounce-around "
               />
-              {/* Name badge */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 px-4 py-2 rounded-full bg-white/90 dark:bg-gray-900/90 border border-gray-200 dark:border-gray-700 shadow-md">
-                <span className="text-sm md:text-base font-semibold text-gray-900 dark:text-gray-100">Moses Otieno</span>
-              </div>
             </div>
 
             {/* Vertical role badges */}

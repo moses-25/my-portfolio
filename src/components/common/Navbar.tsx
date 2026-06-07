@@ -1,9 +1,11 @@
 // src/components/common/Navbar.tsx
 import { useState } from 'react';
+import { useTheme } from '../../context/ThemeContext';
 import DarkModeToggle from './DarkModeToggle';
 import { navItems } from '../../utils/constants';
 
 const Navbar = () => {
+  const { darkMode } = useTheme();
   const [activeSection, setActiveSection] = useState('home');
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,19 +26,23 @@ const Navbar = () => {
         `}
       >
         <div
-          className="
+          className={`
             flex flex-col items-center gap-1 py-3 px-2
             backdrop-blur-sm
-            border border-white/20
+            ${darkMode 
+              ? 'border border-white/20 shadow-xl shadow-black/20' 
+              : 'border border-gray-400/40 shadow-xl shadow-gray-300/40'
+            }
             rounded-3xl
-            shadow-xl shadow-black/20
-          "
+          `}
         >
           {/* Hamburger Menu Icon */}
-          <div className="mb-3 pb-3 border-b border-white/10 w-full flex justify-center">
+          <div className={`mb-3 pb-3 ${darkMode ? 'border-white/10' : 'border-gray-400/20'} border-b w-full flex justify-center`}>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="w-11 h-11 flex items-center justify-center text-white/90 hover:text-white transition-colors md:cursor-default"
+              className={`w-11 h-11 flex items-center justify-center transition-colors md:cursor-default ${
+                darkMode ? 'text-white/90 hover:text-white' : 'text-gray-700 hover:text-gray-900'
+              }`}
               aria-label="Menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,7 +66,9 @@ const Navbar = () => {
                       transition-all duration-200
                       ${isActive
                         ? 'bg-amber-500 text-white shadow-md shadow-amber-500/30'
-                        : 'text-white/50 hover:text-white/90 hover:bg-white/10'
+                        : darkMode
+                          ? 'text-white/50 hover:text-white/90 hover:bg-white/10'
+                          : 'text-gray-600 hover:text-gray-900 hover:bg-gray-300/20'
                       }
                     `}
                   >
@@ -69,15 +77,16 @@ const Navbar = () => {
                     )}
 
                     {/* Tooltip label */}
-                    <span className="
+                    <span className={`
                       absolute left-full ml-3 px-2.5 py-1
-                      bg-gray-900 dark:bg-gray-800 text-white text-xs font-medium
+                      ${darkMode ? 'bg-gray-900 dark:bg-gray-800 text-white' : 'bg-gray-200 text-gray-900'}
+                      text-xs font-medium
                       rounded-lg whitespace-nowrap
                       opacity-0 pointer-events-none -translate-x-1
                       group-hover:opacity-100 group-hover:translate-x-0
                       transition-all duration-150
                       shadow-lg
-                    ">
+                    `}>
                       {item.label}
                     </span>
                   </button>
@@ -87,7 +96,7 @@ const Navbar = () => {
           </ul>
 
           {/* Dark mode toggle at bottom */}
-          <div className="mt-3 pt-3 border-t border-white/10 w-full flex justify-center">
+          <div className={`mt-3 pt-3 ${darkMode ? 'border-white/10' : 'border-gray-400/20'} border-t w-full flex justify-center`}>
             <DarkModeToggle compact />
           </div>
         </div>
