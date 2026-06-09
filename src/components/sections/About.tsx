@@ -182,7 +182,7 @@ const About: React.FC = () => {
                 </p>
 
                 {/* 3-col image grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 pl-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pl-4">
                   {svc.images.map((src: string, i: number) => (
                     <div
                       key={i}
