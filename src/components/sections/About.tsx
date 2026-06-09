@@ -83,7 +83,7 @@ const SERVICES = [
     description:
       'Designing secure and maintainable backend services. Experienced in developing RESTful APIs using Flask, implementing JWT authentication, role-based access control, PostgreSQL database integration, and following MVC architecture for long-term maintainability.',
     images: [
-      '/API2.jpg',
+      '/REST1.png',
       '/API3.jpg',
     ],
   },
@@ -92,8 +92,8 @@ const SERVICES = [
     description:
       'Creating efficient data models that support real-world applications. Skilled in designing relational databases with PostgreSQL, building optimized schemas, managing relationships, and ensuring data integrity for applications involving users, donations, tracking systems, and content management.',
     images: [
-      'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&q=80',
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80',
+      '/DB3.jpg',
+      '/DB1.png',
     ],
   },
 ];
