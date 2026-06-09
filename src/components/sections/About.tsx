@@ -177,7 +177,7 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-500 text-sm leading-relaxed mb-5 pl-4">
+                <p className="text-gray-700 text-base font-medium leading-relaxed mb-5 pl-4">
                   {svc.description}
                 </p>
 
