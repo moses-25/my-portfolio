@@ -79,7 +79,7 @@ const DAY_LABELS: { label: string; index: number }[] = [
 // <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
 const PROFESSIONAL_SKILLS: SkillItem[] = [
-  { name: 'C++',          devicon: 'devicon-cplusplus-plain colored' },
+  { name: 'git',          devicon: 'devicon-git-plain colored' },
   { name: 'JavaScript',   devicon: 'devicon-javascript-plain colored' },
   { name: 'TypeScript',   devicon: 'devicon-typescript-plain colored' },
   { name: 'React',        devicon: 'devicon-react-original colored' },
@@ -89,16 +89,21 @@ const PROFESSIONAL_SKILLS: SkillItem[] = [
   { name: 'HTML5',        devicon: 'devicon-html5-plain colored' },
   { name: 'CSS3',         devicon: 'devicon-css3-plain colored' },
   { name: 'Tailwind CSS', devicon: 'devicon-tailwindcss-plain colored' },
+  { name: 'Postman', devicon: 'devicon-postman-plain colored' },
+  { name: 'Docker',  devicon: 'devicon-docker-plain colored' },
+  { name: 'Linux',   devicon: 'devicon-linux-plain' },
+  { name: 'GitHub',  devicon: 'devicon-github-original colored' },
+  { name: 'Vercel',  devicon: 'devicon-vercel-original' },
+  { name: 'Render',  devicon: 'devicon-render-original colored' },
+  { name: 'CI/CD',  devicon: 'devicon-ci-cd-original colored' },
 ];
 
 const TOOLS: SkillItem[] = [
-  { name: 'Git',     devicon: 'devicon-git-plain colored' },
-  { name: 'GitHub',  devicon: 'devicon-github-original colored' },
-  { name: 'Linux',   devicon: 'devicon-linux-plain' },
+  { name: 'Jira',   devicon: 'devicon-jira-plain colored' },
+  { name: 'Trello',   devicon: 'devicon-trello-plain colored' },
   { name: 'VS Code', devicon: 'devicon-vscode-plain colored' },
-  { name: 'Postman', devicon: 'devicon-postman-plain colored' },
-  { name: 'Figma',   devicon: 'devicon-figma-plain colored' },
-  { name: 'Docker',  devicon: 'devicon-docker-plain colored' },
+  { name: 'Canva',   devicon: 'devicon-canva-plain colored' },
+  { name: 'Google Chrome',  devicon: 'devicon-chrome-plain colored' },
 ];
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
