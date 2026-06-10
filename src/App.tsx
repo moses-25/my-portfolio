@@ -7,7 +7,7 @@ import Skills from './components/sections/Skills';
 import Projects from './components/sections/Projects';
 import Contact from './components/sections/Contact';
 import Footer from './components/sections/Footer';
-import BackToTop from './components/common/BackToTop';
+
 
 const App: React.FC = () => {
 
@@ -70,7 +70,6 @@ const App: React.FC = () => {
       <Projects />
       <Contact />
       <Footer />
-      <BackToTop />
     </div>
   );
 };
