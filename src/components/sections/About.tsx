@@ -107,11 +107,9 @@ const About: React.FC = () => {
         Mobile:  stacked, dark on top, light below
       */}
       <div className="lg:flex lg:min-h-screen">
-
         {/* ── LEFT COL ── dark sticky bio ────────────────────────────────── */}
-        <div className="lg:w-1/2 lg:sticky lg:top-0 lg:h-screen bg-white flex flex-col justify-between px-10 pt-8 pb-6 overflow-hidden">
-
-          <div className="relative z-10 flex flex-col gap-8 flex-1 justify-center">
+        <div className="lg:w-1/2 lg:sticky lg:top-0 lg:h-screen bg-white flex flex-col justify-between px-10 lg:pl-28 pt-8 pb-6 overflow-hidden">
+          <div className="relative z-10 flex flex-col gap-8 flex-1 justify-start pt-8">
             {/* Name */}
             <div>
               <p className="text-black text-sm font-heading tracking-[0.15em] uppercase mb-2">
@@ -124,40 +122,77 @@ const About: React.FC = () => {
 
             {/* Bio */}
             <p className="text-gray-700 text-2xl leading-relaxed max-w-md font-accent font-semibold tracking-wide">
-              Aspiring full-stack software engineer focused on building modern web applications with React, Flask, and PostgreSQL. Passionate about creating clean, scalable solutions and continuously improving both technical and problem-solving skills through real-world projects.
-
+              Aspiring full-stack software engineer focused on building modern
+              web applications with React, Flask, and PostgreSQL. Passionate
+              about creating clean, scalable solutions and continuously
+              improving both technical and problem-solving skills through
+              real-world projects.
             </p>
+
+            {/* Outside of coding */}
+            <div className="text-gray-500 text-sm leading-relaxed max-w-md font-accent">
+              <p className="mb-3 italic">
+                Outside of coding, I love engaging in activities that keep me
+                creative and inspired:
+              </p>
+              <ul className="flex flex-wrap gap-x-6 gap-y-1.5">
+                {['Playing Rugby', 'Exploring Tech Innovations', 'Traveling and Exploring New Places'].map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-400 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Tech icon strip — bottom */}
           <div className="relative z-10 pt-10 border-t border-gray-200">
-            <p className="text-gray-800 text-xs mb-5 uppercase tracking-[0.2em] font-accent">Tech Stack</p>
+            <p className="text-gray-800 text-xs mb-5 uppercase tracking-[0.2em] font-accent">
+              Tech Stack
+            </p>
             <div className="space-y-4 overflow-hidden">
-              <div className="flex gap-6 items-center animate-scroll-left" style={{ width: 'max-content' }}>
-                {[...TECH_ICONS.slice(0, 9), ...TECH_ICONS.slice(0, 9)].map((t, i) => (
-                  <div key={i} className="group relative flex flex-col items-center flex-shrink-0">
-                    <i
-                      className={`${t.icon} text-5xl text-gray-700 group-hover:text-teal-600 transition-colors`}
-                      title={t.name}
-                    />
-                    <span className="text-[10px] text-gray-800 group-hover:text-teal-600 transition-colors mt-0.5">
-                      {t.label}
-                    </span>
-                  </div>
-                ))}
+              <div
+                className="flex gap-6 items-center animate-scroll-left"
+                style={{ width: "max-content" }}
+              >
+                {[...TECH_ICONS.slice(0, 9), ...TECH_ICONS.slice(0, 9)].map(
+                  (t, i) => (
+                    <div
+                      key={i}
+                      className="group relative flex flex-col items-center flex-shrink-0"
+                    >
+                      <i
+                        className={`${t.icon} text-5xl text-gray-700 group-hover:text-teal-600 transition-colors`}
+                        title={t.name}
+                      />
+                      <span className="text-[10px] text-gray-800 group-hover:text-teal-600 transition-colors mt-0.5">
+                        {t.label}
+                      </span>
+                    </div>
+                  ),
+                )}
               </div>
-              <div className="flex gap-6 items-center animate-scroll-right" style={{ width: 'max-content' }}>
-                {[...TECH_ICONS.slice(9), ...TECH_ICONS.slice(9)].map((t, i) => (
-                  <div key={i} className="group relative flex flex-col items-center flex-shrink-0">
-                    <i
-                      className={`${t.icon} text-5xl text-gray-700 group-hover:text-teal-600 transition-colors`}
-                      title={t.name}
-                    />
-                    <span className="text-[10px] text-gray-800 group-hover:text-teal-600 transition-colors mt-0.5">
-                      {t.label}
-                    </span>
-                  </div>
-                ))}
+              <div
+                className="flex gap-6 items-center animate-scroll-right"
+                style={{ width: "max-content" }}
+              >
+                {[...TECH_ICONS.slice(9), ...TECH_ICONS.slice(9)].map(
+                  (t, i) => (
+                    <div
+                      key={i}
+                      className="group relative flex flex-col items-center flex-shrink-0"
+                    >
+                      <i
+                        className={`${t.icon} text-5xl text-gray-700 group-hover:text-teal-600 transition-colors`}
+                        title={t.name}
+                      />
+                      <span className="text-[10px] text-gray-800 group-hover:text-teal-600 transition-colors mt-0.5">
+                        {t.label}
+                      </span>
+                    </div>
+                  ),
+                )}
               </div>
             </div>
           </div>
@@ -165,7 +200,9 @@ const About: React.FC = () => {
 
         {/* ── RIGHT COL ── light scrollable "What I Do" ───────────────────── */}
         <div className="lg:w-1/2 bg-white px-8 lg:px-12 py-20">
-          <h3 className="text-3xl font-heading text-gray-900 mb-14">What I Do</h3>
+          <h3 className="text-3xl font-heading text-gray-900 mb-14">
+            What I Do
+          </h3>
 
           <div className="flex flex-col gap-16">
             {SERVICES.map((svc) => (
@@ -173,7 +210,9 @@ const About: React.FC = () => {
                 {/* Title row with teal left-bar accent */}
                 <div className="flex items-start gap-3 mb-3">
                   <span className="mt-1.5 w-1 h-4 rounded-full bg-teal-500 shrink-0" />
-                  <h4 className="text-lg font-display font-semibold text-gray-900 tracking-wide">{svc.title}</h4>
+                  <h4 className="text-lg font-display font-semibold text-gray-900 tracking-wide">
+                    {svc.title}
+                  </h4>
                 </div>
 
                 {/* Description */}
@@ -201,7 +240,6 @@ const About: React.FC = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );
