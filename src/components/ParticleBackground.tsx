@@ -43,13 +43,11 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
     try {
       await loadFull(engine);
     } catch (error) {
-      // eslint-disable-next-line no-console
       console.error("Error initializing particles engine:", error);
     }
   }, []);
 
   const particlesLoaded = useCallback(async (container?: Container) => {
-    // eslint-disable-next-line no-console
     console.debug("Particles loaded:", container);
   }, []);
 
@@ -96,18 +94,18 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
             modes: { push: { quantity: 90 }, repulse: { distance: 200, duration: 0.4 } },
           },
           particles: {
-            color: { value: "#4682b4" },
-            links: { color: "#00aaff", distance: 150, enable: true, opacity: 0.5, width: 1 },
+            color: { value: particleColor },
+            links: { color: linkColor, distance: 150, enable: enableLinks, opacity: 0.5, width: 1 },
             collisions: { enable: true },
             move: {
               direction: "none",
               enable: true,
               outModes: { default: "bounce" },
               random: false,
-              speed: 1,
+              speed: speed,
               straight: false,
             },
-            number: { density: { enable: true, area: 800 }, value: 80 },
+            number: { density: { enable: false }, value: safeParticleCount },
             opacity: { value: 0.5 },
             shape: { type: "circle" },
             size: { value: { min: 1, max: 5 } },
