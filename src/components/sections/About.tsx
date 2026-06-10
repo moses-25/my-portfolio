@@ -123,7 +123,7 @@ const About: React.FC = () => {
             </div>
 
             {/* Bio */}
-            <p className="text-gray-700 text-2xl leading-relaxed max-w-md font-accent tracking-wide">
+            <p className="text-gray-700 text-3xl leading-relaxed max-w-md font-accent font-semibold tracking-wide">
               Aspiring full-stack software engineer focused on building modern web applications with React, Flask, and PostgreSQL. Passionate about creating clean, scalable solutions and continuously improving both technical and problem-solving skills through real-world projects.
 
             </p>
@@ -177,7 +177,7 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-500 text-sm leading-relaxed mb-5 pl-4">
+                <p className="text-gray-700 text-base font-semibold leading-relaxed mb-5 pl-4">
                   {svc.description}
                 </p>
 
