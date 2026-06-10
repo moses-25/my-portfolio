@@ -10,6 +10,7 @@ const GOOGLE_FONTS_IMPORT = `
 interface SkillItem {
   name: string;
   devicon: string;
+  iconSrc?: string;
 }
 
 // ─── Contribution Grid Data ───────────────────────────────────────────────────
@@ -83,8 +84,8 @@ const PROFESSIONAL_SKILLS: SkillItem[] = [
   { name: 'JavaScript',   devicon: 'devicon-javascript-plain colored' },
   { name: 'TypeScript',   devicon: 'devicon-typescript-plain colored' },
   { name: 'React',        devicon: 'devicon-react-original colored' },
-  { name: 'Python',       devicon: 'devicon-python-plain colored' },
-  { name: 'Flask',        devicon: 'devicon-flask-original colored' },
+  { name: 'Python',       devicon: 'devicon-python-plain', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
+  { name: 'Flask',        devicon: 'devicon-flask-original' },
   { name: 'PostgreSQL',   devicon: 'devicon-postgresql-plain colored' },
   { name: 'HTML5',        devicon: 'devicon-html5-plain colored' },
   { name: 'CSS3',         devicon: 'devicon-css3-plain colored' },
@@ -92,10 +93,9 @@ const PROFESSIONAL_SKILLS: SkillItem[] = [
   { name: 'Postman', devicon: 'devicon-postman-plain colored' },
   { name: 'Docker',  devicon: 'devicon-docker-plain colored' },
   { name: 'Linux',   devicon: 'devicon-linux-plain' },
-  { name: 'GitHub',  devicon: 'devicon-github-original colored' },
+  { name: 'GitHub',  devicon: 'devicon-github-original-wordmark' },
   { name: 'Vercel',  devicon: 'devicon-vercel-original' },
   { name: 'Render',  devicon: 'devicon-render-original colored' },
-  { name: 'CI/CD',  devicon: 'devicon-ci-cd-original colored' },
 ];
 
 const TOOLS: SkillItem[] = [
@@ -103,7 +103,7 @@ const TOOLS: SkillItem[] = [
   { name: 'Trello',   devicon: 'devicon-trello-plain colored' },
   { name: 'VS Code', devicon: 'devicon-vscode-plain colored' },
   { name: 'Canva',   devicon: 'devicon-canva-plain colored' },
-  { name: 'Google Chrome',  devicon: 'devicon-chrome-plain colored' },
+  { name: 'Google Chrome',  devicon: 'devicon-chrome-plain', iconSrc: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/chrome/chrome-original.svg' },
 ];
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
@@ -316,7 +316,11 @@ function SkillPill({ item, index }: { item: SkillItem; index: number }) {
       }}
       style={pillStyle}
     >
-      <i className={item.devicon} style={{ fontSize: '1.25rem' }} />
+      {item.iconSrc ? (
+        <img src={item.iconSrc} alt={item.name} style={{ width: '1.25rem', height: '1.25rem' }} />
+      ) : (
+        <i className={item.devicon} style={{ fontSize: '1.25rem' }} />
+      )}
       <span>{item.name}</span>
     </motion.span>
   );
