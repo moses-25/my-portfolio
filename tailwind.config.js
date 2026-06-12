@@ -10,6 +10,7 @@ module.exports = {
         heading: ['"Archivo Black"', 'sans-serif'],
         display: ['"Nunito Sans"', 'sans-serif'],
         accent: ['"Nunito Sans"', 'sans-serif'],
+        oswald: ['Oswald', 'sans-serif'],
       },
       colors: {
         primary: {

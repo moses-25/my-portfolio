@@ -68,10 +68,10 @@ const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           {/* Left: Heading & Info */}
           <div className="lg:col-span-5 flex flex-col justify-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-oswald font-bold text-white leading-tight tracking-wider">
               CONTACT US
             </h2>
-            <p className="mt-3 text-gray-500 text-sm md:text-base max-w-md">
+            <p className="mt-3 text-gray-500 text-sm md:text-base max-w-md font-oswald">
               Have a project in mind? Let's work together to build something great.
             </p>
 
@@ -81,8 +81,8 @@ const Contact: React.FC = () => {
                   <MapPin className="w-4 h-4 text-white/70" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-600 uppercase tracking-widest">Location</p>
-                  <p className="text-gray-400 text-sm">Nairobi, Kenya</p>
+                  <p className="text-xs text-gray-600 uppercase tracking-widest font-oswald">Location</p>
+                  <p className="text-gray-400 text-sm font-oswald">Nairobi, Kenya</p>
                 </div>
               </div>
 
@@ -91,8 +91,8 @@ const Contact: React.FC = () => {
                   <Phone className="w-4 h-4 text-white/70" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-600 uppercase tracking-widest">Phone</p>
-                  <p className="text-gray-400 text-sm">+254 757 268 162</p>
+                  <p className="text-xs text-gray-600 uppercase tracking-widest font-oswald">Phone</p>
+                  <p className="text-gray-400 text-sm font-oswald">+254 757 268 162</p>
                 </div>
               </div>
 
@@ -101,8 +101,8 @@ const Contact: React.FC = () => {
                   <Mail className="w-4 h-4 text-white/70" />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-600 uppercase tracking-widest">Email</p>
-                  <p className="text-gray-400 text-sm">mosesotieno8363@gmail.com</p>
+                  <p className="text-xs text-gray-600 uppercase tracking-widest font-oswald">Email</p>
+                  <p className="text-gray-400 text-sm font-oswald">mosesotieno8363@gmail.com</p>
                 </div>
               </div>
             </div>
