@@ -128,91 +128,105 @@ const Contact: React.FC = () => {
 
           {/* Right: Form */}
           <div className="lg:col-span-7">
-            <form onSubmit={handleSubmit} className="space-y-7">
-              <div>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder="Your Name"
-                  className="w-full bg-transparent border-b border-white/10 text-white py-3 placeholder-gray-700 focus:outline-none focus:border-white transition-colors duration-200 text-base"
-                />
-                {errors.name && (
-                  <p className="mt-1 text-xs text-white/60">{errors.name}</p>
-                )}
-              </div>
-
-              <div>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="Email Address"
-                  className="w-full bg-transparent border-b border-white/10 text-white py-3 placeholder-gray-700 focus:outline-none focus:border-white transition-colors duration-200 text-base"
-                />
-                {errors.email && (
-                  <p className="mt-1 text-xs text-white/60">{errors.email}</p>
-                )}
-              </div>
-
-              <div>
-                <input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  value={form.subject}
-                  onChange={handleChange}
-                  placeholder="Subject"
-                  className="w-full bg-transparent border-b border-white/10 text-white py-3 placeholder-gray-700 focus:outline-none focus:border-white transition-colors duration-200 text-base"
-                />
-                {errors.subject && (
-                  <p className="mt-1 text-xs text-white/60">{errors.subject}</p>
-                )}
-              </div>
-
-              <div>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Your Message"
-                  className="w-full bg-transparent border-b border-white/10 text-white py-3 placeholder-gray-700 focus:outline-none focus:border-white transition-colors duration-200 text-base resize-none"
-                />
-                {errors.message && (
-                  <p className="mt-1 text-xs text-white/60">{errors.message}</p>
-                )}
-              </div>
-
-              {success && (
-                <div className="border border-white/20 bg-white/5 px-4 py-3">
-                  <p className="text-white/80 text-sm">{success}</p>
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 md:p-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-gray-400 text-xs uppercase tracking-widest mb-2 font-oswald">
+                    Your Name
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="e.g. John Doe"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg text-white px-4 py-3 placeholder-gray-600 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all duration-200 text-base font-oswald"
+                  />
+                  {errors.name && (
+                    <p className="mt-1.5 text-xs text-red-400">{errors.name}</p>
+                  )}
                 </div>
-              )}
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full py-3.5 bg-white text-black font-medium text-sm uppercase tracking-widest hover:bg-white/90 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? (
-                  <span className="flex items-center justify-center gap-2">
-                    <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
-                    Sending...
-                  </span>
-                ) : (
-                  <span className="flex items-center justify-center gap-2">
-                    <Send className="w-4 h-4" />
-                    Send Message
-                  </span>
+                <div>
+                  <label htmlFor="email" className="block text-gray-400 text-xs uppercase tracking-widest mb-2 font-oswald">
+                    Email Address
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="e.g. you@example.com"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg text-white px-4 py-3 placeholder-gray-600 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all duration-200 text-base font-oswald"
+                  />
+                  {errors.email && (
+                    <p className="mt-1.5 text-xs text-red-400">{errors.email}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-gray-400 text-xs uppercase tracking-widest mb-2 font-oswald">
+                    Subject
+                  </label>
+                  <input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    value={form.subject}
+                    onChange={handleChange}
+                    placeholder="What is this about?"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg text-white px-4 py-3 placeholder-gray-600 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all duration-200 text-base font-oswald"
+                  />
+                  {errors.subject && (
+                    <p className="mt-1.5 text-xs text-red-400">{errors.subject}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-gray-400 text-xs uppercase tracking-widest mb-2 font-oswald">
+                    Your Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder="Tell me about your project..."
+                    className="w-full bg-white/5 border border-white/10 rounded-lg text-white px-4 py-3 placeholder-gray-600 focus:outline-none focus:border-white/40 focus:bg-white/10 transition-all duration-200 text-base resize-none font-oswald"
+                  />
+                  {errors.message && (
+                    <p className="mt-1.5 text-xs text-red-400">{errors.message}</p>
+                  )}
+                </div>
+
+                {success && (
+                  <div className="border border-white/10 bg-white/5 rounded-lg px-5 py-4">
+                    <p className="text-white/80 text-sm">{success}</p>
+                  </div>
                 )}
-              </button>
-            </form>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 bg-white text-black font-medium text-sm uppercase tracking-widest rounded-lg hover:bg-white/90 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-oswald"
+                >
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                      Sending...
+                    </span>
+                  ) : (
+                    <span className="flex items-center justify-center gap-2">
+                      <Send className="w-4 h-4" />
+                      Send Message
+                    </span>
+                  )}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
 
