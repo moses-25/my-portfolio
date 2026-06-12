@@ -63,19 +63,19 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="relative bg-black py-20 md:py-28 overflow-hidden">
+    <section id="contact" className="relative bg-black py-12 md:py-16 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Left: Heading & Info */}
           <div className="lg:col-span-5 flex flex-col justify-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-oswald font-bold text-white leading-tight tracking-wider">
               CONTACT US
             </h2>
-            <p className="mt-3 text-gray-500 text-sm md:text-base max-w-md font-oswald">
+            <p className="mt-2 text-gray-500 text-sm md:text-base max-w-md font-oswald">
               Have a project in mind? Let's work together to build something great.
             </p>
 
-            <div className="mt-6 space-y-4">
+            <div className="mt-4 space-y-3">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center">
                   <MapPin className="w-4 h-4 text-white/70" />
@@ -107,7 +107,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-6">
               <a
                 href={whatsappLink}
                 target="_blank"
@@ -128,8 +128,8 @@ const Contact: React.FC = () => {
 
           {/* Right: Form */}
           <div className="lg:col-span-7">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 md:p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-5 md:p-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-gray-400 text-xs uppercase tracking-widest mb-2 font-oswald">
                     Your Name
