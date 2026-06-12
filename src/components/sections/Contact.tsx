@@ -116,12 +116,13 @@ const Contact: React.FC = () => {
                 <img
                   src="/QR.png"
                   alt="Scan to chat on WhatsApp"
-                  width={100}
-                  height={100}
+                  width={140}
+                  height={140}
                   className="bg-white p-2"
                   loading="lazy"
                 />
               </a>
+              <p className="mt-2 text-gray-500 text-sm font-oswald tracking-wider">scan we connect</p>
             </div>
           </div>
 
