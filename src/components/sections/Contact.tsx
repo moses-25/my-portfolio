@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 interface FormState {
   name: string;
@@ -53,12 +54,33 @@ const Contact: React.FC = () => {
     if (!validate()) return;
 
     setIsSubmitting(true);
-    setTimeout(() => {
-      setSuccess("Message sent successfully. I'll get back to you soon.");
-      setForm(initialState);
-      setIsSubmitting(false);
-      setTimeout(() => setSuccess(''), 4000);
-    }, 800);
+
+    const templateParams = {
+      from_name: form.name,
+      from_email: form.email,
+      subject: form.subject,
+      message: form.message,
+    };
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        setSuccess('Message sent');
+        setForm(initialState);
+        setIsSubmitting(false);
+        setTimeout(() => setSuccess(''), 4000);
+      })
+      .catch((err) => {
+        console.error('EmailJS error:', err);
+        setSuccess('Something went wrong. Please try again.');
+        setIsSubmitting(false);
+        setTimeout(() => setSuccess(''), 4000);
+      });
   };
 
   return (
@@ -203,8 +225,8 @@ const Contact: React.FC = () => {
                 </div>
 
                 {success && (
-                  <div className="border border-white/10 bg-white/5 rounded-lg px-5 py-4">
-                    <p className="text-white/80 text-sm">{success}</p>
+                  <div className="border border-green-500/40 bg-green-500/10 rounded-lg px-5 py-4">
+                    <p className="text-green-400 text-sm">{success}</p>
                   </div>
                 )}
 
