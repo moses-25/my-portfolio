@@ -17,9 +17,8 @@ interface FormErrors {
 
 const initialState: FormState = { name: '', email: '', subject: '', message: '' };
 
-const whatsappNumber = '254748867064';
+const whatsappNumber = '254757268162';
 const whatsappLink = `https://wa.me/${whatsappNumber}`;
-const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=120x120&bgcolor=ffffff&color=000000&data=${encodeURIComponent(whatsappLink)}`;
 
 const Contact: React.FC = () => {
   const [form, setForm] = useState<FormState>(initialState);
@@ -115,7 +114,7 @@ const Contact: React.FC = () => {
                 className="inline-block"
               >
                 <img
-                  src={qrSrc}
+                  src="/QR.png"
                   alt="Scan to chat on WhatsApp"
                   width={100}
                   height={100}
