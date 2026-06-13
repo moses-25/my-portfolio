@@ -46,5 +46,13 @@ export const projectsData: Project[] = [
     tech: ['Python', 'Typer', 'SQLAlchemy ORM', 'pytest', 'POSTGRESQL'],
     github: 'https://github.com/moses-25',
     demo: 'https://github.com/moses-25/Health_simplified_CLI_app/tree/main'
+  },
+  {
+    title: 'DriftWood Cafe',
+    image: '/Drift.jpg',
+    description: "Driftwood Café is a cozy café serving freshly brewed coffee, delicious meals, and handcrafted beverages in a warm and inviting atmosphere. It's the perfect place to relax, catch up with friends, or enjoy a productive work session.",
+    tech: ['React', 'Vite', 'Tailwind','Framer','Flask','PostgresSQL','SQLAlchemy','Gunicorn'],
+    github: 'https://github.com/moses-25',
+    demo: 'https://driftwood-taupe.vercel.app/'
   }
 ];
