@@ -24,9 +24,9 @@ export const skillsData: Skill[] = [
 
 export const projectsData: Project[] = [
   {
-    title: 'Charity & Donation Platform',
+    title: 'Tuinue Wasichana',
     image: '/Tuinue Wasichana.png',
-    description: 'A platform connecting donors with verified charities, enabling seamless donations and impact tracking.',
+    description: "Tuinue Wasichana is a donation platform that connects donors with charities supporting African schoolgirls by funding education, menstrual hygiene, and essential resources. The platform enables secure one-time and recurring donations while providing dedicated experiences for donors, charities, and administrators.",
     tech: ['HTML', 'CSS', 'JAVASC', 'REACT', 'FLASK', 'PYTHON', 'POSTGRESQL'],
     github: 'https://github.com/moses-25',
     demo: '#'
@@ -34,8 +34,8 @@ export const projectsData: Project[] = [
   {
     title: 'GreenThumb',
     image: '/project2.png',
-    description: 'Your personal plant management app. Track your plants, set reminders, and grow your garden with ease.',
-    tech: [' HTML5', 'React', 'CSS3', 'Flask', 'PYTHON'],
+    description: "Green Thumb is a React-based plant management application that helps users track their plants, manage care schedules, and set reminders for tasks like watering and fertilizing. It provides a user-friendly interface with authentication, plant organization features, and tools to support healthy plant care routines.",
+    tech: [' HTML5', 'React', 'Vite','CSS3', 'Flask', 'PYTHON'],
     github: 'https://github.com/HermannMike/green-thumb/tree/moses2',
     demo: 'https://green-thumb-six.vercel.app/'
   },
