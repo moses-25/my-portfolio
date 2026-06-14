@@ -29,7 +29,7 @@ export const projectsData: Project[] = [
     description: "Tuinue Wasichana is a donation platform that connects donors with charities supporting African schoolgirls by funding education, menstrual hygiene, and essential resources. The platform enables secure one-time and recurring donations while providing dedicated experiences for donors, charities, and administrators.",
     tech: ['HTML', 'CSS', 'JAVASC', 'REACT', 'FLASK', 'PYTHON', 'POSTGRESQL'],
     github: 'https://github.com/moses-25',
-    demo: '#'
+    demo: 'https://tuinue-wasichana-mrng.vercel.app/'
   },
   {
     title: 'GreenThumb',
