@@ -1,72 +1,35 @@
-# Moses Otieno - Portfolio Website
+# Moses Otieno — Portfolio
 
-A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS to showcase my skills, projects, and professional journey as a Software Engineering student.
+Modern, responsive portfolio built with **React**, **TypeScript**, and **Tailwind CSS**.
 
-## 🚀 Features
+## Features
 
-  - Clean, professional layout
-  - Dark/light mode toggle
-  - Responsive on all devices
-  - Smooth animations and transitions
+- Dark/light mode with system preference detection
+- Typewriter hero animation
+- Interactive project cards with GitHub & demo links
+- Skills section with contribution-style grid
+- Contact form via EmailJS
+- WhatsApp QR integration
+- Particle background effects
+- Fully responsive across all devices
 
-- **Sections**
-  - Hero section with typing animation
-  - About me with skills visualization
-  - Projects showcase with interactive cards
-  - Contact form with validation
+## Tech Stack
 
-- **Technical Highlights**
-  - TypeScript for type safety
-  - Tailwind CSS for utility-first styling
-  - Vite for fast development
-  - ECharts for skills visualization
-  - React hooks for state management
+**Frontend:** React 18, TypeScript, Tailwind CSS, Framer Motion, Vite  
+**Other:** EmailJS, tsparticles, Lucide Icons
 
-## 🛠️ Technologies Used
+## Getting Started
 
-- **Frontend**
-  - React 18
-  - TypeScript
-  - Tailwind CSS
-  - ECharts
-  - Framer Motion (for animations)
+```bash
+git clone https://github.com/moses25/my-portfolio.git
+cd my-portfolio
+npm install
+npm run dev
+```
 
-- **Build Tools**
-  - Vite
-  - PostCSS
-  - npm
+Create a `.env` file with your EmailJS keys:
 
-## 📦 Installation
+## Links
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/your-portfolio.git
-src/
-├── assets/
-│   ├── images/          # Store all images here
-│   └── styles/          # Additional CSS files if needed
-├── components/
-│   ├── common/          # Reusable components
-│   │   ├── Button.tsx
-│   │   ├── DarkModeToggle.tsx
-│   │   └── Navbar.tsx
-│   ├── sections/        # Page sections
-│   │   ├── About.tsx
-│   │   ├── Contact.tsx
-│   │   ├── Footer.tsx
-│   │   ├── Hero.tsx
-│   │   ├── Projects.tsx
-│   │   └── Skills.tsx
-│   └── ui/             # UI-specific components
-│       ├── SkillCard.tsx
-│       └── ProjectCard.tsx
-├── hooks/              # Custom hooks
-│   ├── useDarkMode.ts
-│   └── useTypingEffect.ts
-├── types/              # TypeScript types
-│   └── index.ts
-├── utils/              # Utility functions
-│   ├── constants.ts
-│   └── helpers.ts
-├── App.tsx             # Main App component
-└── index.tsx           # Entry point
+- **Live site:** [my-portfolio](https://my-portfolio-livid-omega-82.vercel.app)
+- **GitHub:** [@moses-25](https://github.com/moses-25)
