@@ -13,6 +13,11 @@ dist
 dist-ssr
 *.local
 
+# Auto-generated tool directories
+test_suite_analysis/
+managed_context/
+.qodo/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
