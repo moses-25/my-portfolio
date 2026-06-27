@@ -16,7 +16,6 @@ const App: React.FC = () => {
     glow.className = 'glow-cursor';
     document.body.appendChild(glow);
 
-    const isInteractive = (el: Element | null) => !!el && (el.tagName === 'A' || el.tagName === 'BUTTON' || el.closest('a,button'));
     const findInteractive = (el: Element | null) => (el && (el.closest('a,button') as HTMLElement)) || null;
 
     const onMove = (e: MouseEvent) => {
