@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
           {/* Left: Heading & Info */}
           <div className="lg:col-span-5 flex flex-col justify-center">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-oswald font-bold text-white leading-tight tracking-wider">
-              CONTACT US
+              CONTACT ME
             </h2>
             <p className="mt-2 text-gray-500 text-sm md:text-base max-w-md font-oswald">
               Have a project in mind? Let's work together to build something great.
